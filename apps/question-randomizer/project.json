@@ -19,7 +19,10 @@
           "apps/question-randomizer/src/favicon.ico",
           "apps/question-randomizer/src/assets"
         ],
-        "styles": ["apps/question-randomizer/src/styles.scss"],
+        "styles": [
+          "libs/shared/layout/ui-crt/src/styles/styles.scss",
+          "apps/question-randomizer/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {

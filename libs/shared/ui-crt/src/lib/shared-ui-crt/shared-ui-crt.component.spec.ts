@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SharedLayoutUiCrtComponent } from './shared-layout-ui-crt.component';
+import { SharedLayoutUiCrtComponent } from './shared-ui-crt.component';
 
 describe('SharedLayoutUiCrtComponent', () => {
   let component: SharedLayoutUiCrtComponent;

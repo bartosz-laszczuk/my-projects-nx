@@ -20,7 +20,7 @@
           "apps/question-randomizer/src/assets"
         ],
         "styles": [
-          "libs/shared/layout/ui-crt/src/styles/styles.scss",
+          "libs/shared/ui-crt/src/styles/styles.scss",
           "apps/question-randomizer/src/styles.scss"
         ],
         "scripts": []

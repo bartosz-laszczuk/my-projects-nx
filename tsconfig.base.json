@@ -15,9 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@my-projects-nx/shared/layout/ui-crt": [
-        "libs/shared/layout/ui-crt/src/index.ts"
-      ]
+      "@my-projects-nx/shared/ui-crt": ["libs/shared/ui-crt/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

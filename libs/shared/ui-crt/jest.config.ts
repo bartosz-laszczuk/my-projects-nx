@@ -1,6 +1,6 @@
 /* eslint-disable */
 export default {
-  displayName: 'shared-layout-ui-crt',
+  displayName: 'shared-ui-crt',
   preset: '../../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -9,7 +9,7 @@ export default {
       stringifyContentPathRegex: '\\.(html|svg)$',
     },
   },
-  coverageDirectory: '../../../../coverage/libs/shared/layout/ui-crt',
+  coverageDirectory: '../../../../coverage/libs/shared/ui-crt',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': 'jest-preset-angular',
   },

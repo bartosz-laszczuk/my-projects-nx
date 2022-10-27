@@ -1,6 +1,6 @@
 {
   "name": "shared-ui-crt",
-  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
   "sourceRoot": "libs/shared/ui-crt/src",
   "prefix": "my-projects-nx",

@@ -3,10 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { SharedLayoutUiCrtComponent } from '@my-projects-nx/shared/layout/ui-crt';
 
 import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, SharedLayoutUiCrtComponent],
+  imports: [BrowserModule, SharedLayoutUiCrtComponent, BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

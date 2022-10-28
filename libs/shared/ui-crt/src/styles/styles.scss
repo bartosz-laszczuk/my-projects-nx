@@ -9,9 +9,7 @@ html {
 }
 body {
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
   background: colors.$background;
   color: colors.$on-background;
   font-family: fonts.$base-font-family;

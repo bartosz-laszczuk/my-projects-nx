@@ -1,6 +1,6 @@
 {
-  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
   "name": "question-randomizer-shell-ui-header",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
   "sourceRoot": "libs/question-randomizer/shell/ui/header/src",
   "prefix": "my-projects-nx",

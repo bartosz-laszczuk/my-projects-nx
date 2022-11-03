@@ -15,6 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@my-projects-nx/question-randomizer/shell/data-access/state": [
+        "libs/question-randomizer/shell/data-access/state/src/index.ts"
+      ],
       "@my-projects-nx/question-randomizer/shell/feature": [
         "libs/question-randomizer/shell/feature/src/index.ts"
       ],

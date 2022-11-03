@@ -7,11 +7,12 @@ import {
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
+import { QuestionRandomizerShellUiLogoComponent } from '@my-projects-nx/question-randomizer/shell/ui/logo';
 
 @Component({
   selector: 'my-projects-nx-question-randomizer-shell-ui-header',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, QuestionRandomizerShellUiLogoComponent],
   templateUrl: './question-randomizer-shell-ui-header.component.html',
   styleUrls: ['./question-randomizer-shell-ui-header.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

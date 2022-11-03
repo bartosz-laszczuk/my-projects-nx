@@ -15,9 +15,6 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@my-projects-nx/question-randomizer/shell/data-access/state": [
-        "libs/question-randomizer/shell/data-access/state/src/index.ts"
-      ],
       "@my-projects-nx/question-randomizer/shell/feature": [
         "libs/question-randomizer/shell/feature/src/index.ts"
       ],
@@ -26,6 +23,12 @@
       ],
       "@my-projects-nx/question-randomizer/shell/ui/layout": [
         "libs/question-randomizer/shell/ui/layout/src/index.ts"
+      ],
+      "@my-projects-nx/question-randomizer/shell/ui/logo": [
+        "libs/question-randomizer/shell/ui/logo/src/index.ts"
+      ],
+      "@my-projects-nx/question-randomizer/shell/util/services": [
+        "libs/question-randomizer/shell/util/services/src/index.ts"
       ],
       "@my-projects-nx/shared/ui-crt": ["libs/shared/ui-crt/src/index.ts"]
     }

@@ -1,3 +1,5 @@
+@use 'mixins';
+
 :host {
   display: flex;
   flex-direction: column;
@@ -13,6 +15,9 @@
   cursor: pointer;
   font-family: 'Lucida Console';
   display: inline-block;
+  @include mixins.respond(tab-port) {
+    margin-bottom: 0;
+  }
 
   &--xxlarge,
   &--xlarge,
@@ -34,5 +39,8 @@
     display: block;
     overflow: hidden;
     animation: typing 0.8s steps(40, end);
+    @include mixins.respond(tab-port) {
+      margin-top: 0;
+    }
   }
 }

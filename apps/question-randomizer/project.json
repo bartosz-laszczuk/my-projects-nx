@@ -23,7 +23,10 @@
           "libs/shared/ui-crt/src/styles/styles.scss",
           "apps/question-randomizer/src/styles.scss"
         ],
-        "scripts": []
+        "scripts": [],
+        "stylePreprocessorOptions": {
+          "includePaths": ["libs/shared/ui-crt/src/styles/variables"]
+        }
       },
       "configurations": {
         "production": {

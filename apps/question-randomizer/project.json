@@ -20,12 +20,12 @@
           "apps/question-randomizer/src/assets"
         ],
         "styles": [
-          "libs/shared/ui-crt/src/styles/styles.scss",
+          "libs/shared/crt/ui/layout/src/styles/styles.scss",
           "apps/question-randomizer/src/styles.scss"
         ],
         "scripts": [],
         "stylePreprocessorOptions": {
-          "includePaths": ["libs/shared/ui-crt/src/styles/variables"]
+          "includePaths": ["libs/shared/crt/ui/layout/src/styles/variables"]
         }
       },
       "configurations": {

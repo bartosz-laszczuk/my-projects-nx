@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { LogoBreakpointsService } from '@my-projects-nx/question-randomizer/shell/util/services';
-import { tap } from 'rxjs';
 
 @Component({
   selector: 'my-projects-nx-question-randomizer-shell-feature',
@@ -9,8 +8,6 @@ import { tap } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class QuestionRandomizerShellFeatureComponent {
-  breakpoint$ = this.logoBreakpointsService.breakpointHit$.pipe(
-    tap((breakpoint) => console.log(breakpoint))
-  );
+  breakpoint$ = this.logoBreakpointsService.breakpointHit$;
   constructor(private logoBreakpointsService: LogoBreakpointsService) {}
 }

@@ -27,7 +27,9 @@
       "@my-projects-nx/question-randomizer/shell/util/services": [
         "libs/question-randomizer/shell/util/services/src/index.ts"
       ],
-      "@my-projects-nx/shared/ui-crt": ["libs/shared/ui-crt/src/index.ts"]
+      "@my-projects-nx/shared/crt/ui/layout": [
+        "libs/shared/crt/ui/layout/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

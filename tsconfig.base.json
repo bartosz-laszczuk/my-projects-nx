@@ -21,9 +21,6 @@
       "@my-projects-nx/question-randomizer/shell/ui/header": [
         "libs/question-randomizer/shell/ui/header/src/index.ts"
       ],
-      "@my-projects-nx/question-randomizer/shell/ui/layout": [
-        "libs/question-randomizer/shell/ui/layout/src/index.ts"
-      ],
       "@my-projects-nx/question-randomizer/shell/ui/logo": [
         "libs/question-randomizer/shell/ui/logo/src/index.ts"
       ],

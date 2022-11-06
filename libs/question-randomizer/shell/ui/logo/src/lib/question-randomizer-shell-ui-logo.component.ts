@@ -2,11 +2,11 @@ import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
-  OnInit,
+  Input,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { BreakpointsService } from '@my-projects-nx/question-randomizer/shell/util/services';
+import { LogoBreakpoint } from '@my-projects-nx/question-randomizer/shell/util/services';
 
 @Component({
   selector: 'my-projects-nx-question-randomizer-shell-ui-logo',
@@ -16,16 +16,9 @@ import { BreakpointsService } from '@my-projects-nx/question-randomizer/shell/ut
   styleUrls: ['./question-randomizer-shell-ui-logo.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class QuestionRandomizerShellUiLogoComponent implements OnInit {
-  showContainer = true;
-  constructor(
-    private cdr: ChangeDetectorRef,
-    private breakpointService: BreakpointsService
-  ) {}
+export class QuestionRandomizerShellUiLogoComponent {
+  @Input() breakpoint: LogoBreakpoint | null = null;
+  constructor(private cdr: ChangeDetectorRef) {}
 
-  ngOnInit() {
-    this.breakpointService.breakpointHit.subscribe((breakpoint) =>
-      console.log(breakpoint)
-    );
-  }
+  logoBreakpointEnum = LogoBreakpoint;
 }

@@ -2,6 +2,8 @@
   <!-- [isAuthorized]="(isAuthorized$ | async)!"
     [user]="user$ | async"
     (signOut)="onSignOut()" -->
-  <my-projects-nx-question-randomizer-shell-ui-header></my-projects-nx-question-randomizer-shell-ui-header>
+  <my-projects-nx-question-randomizer-shell-ui-header
+    [breakpoint]="breakpoint$ | async"
+  ></my-projects-nx-question-randomizer-shell-ui-header>
   <router-outlet></router-outlet>
 </my-projects-nx-shared-ui-crt>

@@ -8,6 +8,7 @@ import {
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
 import { QuestionRandomizerShellUiLogoComponent } from '@my-projects-nx/question-randomizer/shell/ui/logo';
+import { LogoBreakpoint } from '@my-projects-nx/question-randomizer/shell/util/services';
 
 @Component({
   selector: 'my-projects-nx-question-randomizer-shell-ui-header',
@@ -18,6 +19,7 @@ import { QuestionRandomizerShellUiLogoComponent } from '@my-projects-nx/question
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class QuestionRandomizerShellUiHeaderComponent {
+  @Input() breakpoint: LogoBreakpoint | null = null;
   @Input() user: any; //User | null;
   @Input() isAuthorized = false;
   @Output() signOut = new EventEmitter<void>();

@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { QuestionRandomizerShellUiLayoutComponent } from './question-randomizer-shell-layout.component';
+import { QuestionRandomizerShellUiLayoutComponent } from './question-randomizer-shell-feature.component';
 
 describe('QuestionRandomizerShellUiLayoutComponent', () => {
   let component: QuestionRandomizerShellUiLayoutComponent;

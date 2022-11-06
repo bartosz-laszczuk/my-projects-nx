@@ -1,10 +1,10 @@
 import { Route } from '@angular/router';
-import { QuestionRandomizerShellUiLayoutComponent } from '@my-projects-nx/question-randomizer/shell/ui/layout';
+import { QuestionRandomizerShellFeatureComponent } from './question-randomizer-shell-feature.component';
 
 export const questionRandomizerFeatureShellRoutes: Route[] = [
   {
     path: '',
-    component: QuestionRandomizerShellUiLayoutComponent,
+    component: QuestionRandomizerShellFeatureComponent,
     //   {
     //     path: 'auth',
     //     loadChildren: () => import('../auth/auth.module').then((m) => m.AuthModule),

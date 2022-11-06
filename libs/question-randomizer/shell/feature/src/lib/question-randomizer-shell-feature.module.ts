@@ -6,8 +6,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import { SharedLayoutUiCrtComponent } from '@my-projects-nx/shared/ui-crt';
+import { QuestionRandomizerShellUiHeaderComponent } from '@my-projects-nx/question-randomizer/shell/ui/header';
+import { QuestionRandomizerShellFeatureComponent } from './question-randomizer-shell-feature.component';
 
 @NgModule({
+  declarations: [QuestionRandomizerShellFeatureComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -31,6 +35,8 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
     }),
     // EffectsModule.forRoot([CommonEffects, DictionariesEffects, UserEffects]),
     StoreRouterConnectingModule.forRoot(),
+    SharedLayoutUiCrtComponent,
+    QuestionRandomizerShellUiHeaderComponent,
   ],
   exports: [RouterModule],
 })

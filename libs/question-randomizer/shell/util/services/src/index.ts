@@ -1,1 +1,1 @@
-export * from './lib/breakpoints.service';
+export * from './lib/logo-breakpoints.service';

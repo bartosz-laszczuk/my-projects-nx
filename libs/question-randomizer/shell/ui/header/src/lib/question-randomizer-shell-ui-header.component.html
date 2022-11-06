@@ -1,4 +1,7 @@
-<my-projects-nx-question-randomizer-shell-ui-logo>
+<my-projects-nx-question-randomizer-shell-ui-logo
+  *ngIf="breakpoint"
+  [breakpoint]="breakpoint"
+>
   <nav class="navigation">
     <ng-container *ngIf="isAuthorized === false">
       <a

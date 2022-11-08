@@ -1,6 +1,6 @@
 {
-  "$schema": "../../../../../../node_modules/nx/schemas/project-schema.json",
   "name": "shared-ui-crt-controls-input",
+  "$schema": "../../../../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
   "sourceRoot": "libs/shared/ui/crt/controls/input/src",
   "prefix": "my-projects-nx",

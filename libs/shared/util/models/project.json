@@ -1,6 +1,6 @@
 {
+  "name": "shared-util-models",
   "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
-  "name": "shared-util-models-",
   "projectType": "library",
   "sourceRoot": "libs/shared/util/models//src",
   "prefix": "my-projects-nx",

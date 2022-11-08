@@ -1,6 +1,6 @@
 /* eslint-disable */
 export default {
-  displayName: 'shared-util-models-',
+  displayName: 'shared-util-models',
   preset: '../../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {

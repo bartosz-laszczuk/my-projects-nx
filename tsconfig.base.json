@@ -15,6 +15,15 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@my-projects-nx/question-randomizer/auth/data-access/store": [
+        "libs/question-randomizer/auth/data-access/store/src/index.ts"
+      ],
+      "@my-projects-nx/question-randomizer/auth/feature/login": [
+        "libs/question-randomizer/auth/feature/login/src/index.ts"
+      ],
+      "@my-projects-nx/question-randomizer/auth/feature/shell": [
+        "libs/question-randomizer/auth/feature/shell/src/index.ts"
+      ],
       "@my-projects-nx/question-randomizer/shell/feature": [
         "libs/question-randomizer/shell/feature/src/index.ts"
       ],
@@ -29,6 +38,9 @@
       ],
       "@my-projects-nx/shared/data-access/auth": [
         "libs/shared/data-access/auth/src/index.ts"
+      ],
+      "@my-projects-nx/shared/ui/crt/buttons/button": [
+        "libs/shared/ui/crt/buttons/button/src/index.ts"
       ],
       "@my-projects-nx/shared/ui/crt/controls/autocomplete": [
         "libs/shared/ui/crt/controls/autocomplete/src/index.ts"
@@ -57,8 +69,17 @@
       "@my-projects-nx/shared/ui/crt/controls/select": [
         "libs/shared/ui/crt/controls/select/src/index.ts"
       ],
+      "@my-projects-nx/shared/ui/crt/indicators/progress-bar": [
+        "libs/shared/ui/crt/indicators/progress-bar/src/index.ts"
+      ],
+      "@my-projects-nx/shared/ui/crt/indicators/spinner": [
+        "libs/shared/ui/crt/indicators/spinner/src/index.ts"
+      ],
       "@my-projects-nx/shared/ui/crt/layout": [
         "libs/shared/ui/crt/layout/src/index.ts"
+      ],
+      "@my-projects-nx/shared/util/guards": [
+        "libs/shared/util/guards/src/index.ts"
       ],
       "@my-projects-nx/shared/util/models": [
         "libs/shared/util/models/src/index.ts"

@@ -1,0 +1,7 @@
+# shared-ui-crt-indicators-progress-bar
+
+This library was generated with [Nx](https://nx.dev).
+
+## Running unit tests
+
+Run `nx test shared-ui-crt-indicators-progress-bar` to execute the unit tests.

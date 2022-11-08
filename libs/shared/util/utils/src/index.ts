@@ -1,1 +1,1 @@
-export * from './lib/utilities.service';
+export * from './lib';

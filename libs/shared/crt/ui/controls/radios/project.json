@@ -1,15 +1,15 @@
 {
-  "name": "shared-crt-ui-layout",
-  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "name": "shared-crt-ui-controls-radios",
+  "$schema": "../../../../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
-  "sourceRoot": "libs/shared/crt/ui/layout/src",
+  "sourceRoot": "libs/shared/crt/ui/controls/radios/src",
   "prefix": "my-projects-nx",
   "targets": {
     "test": {
       "executor": "@nrwl/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "libs/shared/crt/ui/layout/jest.config.ts",
+        "jestConfig": "libs/shared/crt/ui/controls/radios/jest.config.ts",
         "passWithNoTests": true
       }
     },
@@ -17,8 +17,8 @@
       "executor": "@nrwl/linter:eslint",
       "options": {
         "lintFilePatterns": [
-          "libs/shared/crt/ui/layout/**/*.ts",
-          "libs/shared/crt/ui/layout/**/*.html"
+          "libs/shared/crt/ui/controls/radios/**/*.ts",
+          "libs/shared/crt/ui/controls/radios/**/*.html"
         ]
       }
     }

@@ -18,8 +18,14 @@
       "@my-projects-nx/question-randomizer/auth/data-access/store": [
         "libs/question-randomizer/auth/data-access/store/src/index.ts"
       ],
+      "@my-projects-nx/question-randomizer/auth/feature/email-confirm": [
+        "libs/question-randomizer/auth/feature/email-confirm/src/index.ts"
+      ],
       "@my-projects-nx/question-randomizer/auth/feature/login": [
         "libs/question-randomizer/auth/feature/login/src/index.ts"
+      ],
+      "@my-projects-nx/question-randomizer/auth/feature/registration": [
+        "libs/question-randomizer/auth/feature/registration/src/index.ts"
       ],
       "@my-projects-nx/question-randomizer/auth/feature/shell": [
         "libs/question-randomizer/auth/feature/shell/src/index.ts"

@@ -27,38 +27,38 @@
       "@my-projects-nx/question-randomizer/shell/util/services": [
         "libs/question-randomizer/shell/util/services/src/index.ts"
       ],
-      "@my-projects-nx/shared/crt/ui/controls/autocomplete": [
-        "libs/shared/crt/ui/controls/autocomplete/src/index.ts"
-      ],
-      "@my-projects-nx/shared/crt/ui/controls/checkboxes": [
-        "libs/shared/crt/ui/controls/checkboxes/src/index.ts"
-      ],
-      "@my-projects-nx/shared/crt/ui/controls/date": [
-        "libs/shared/crt/ui/controls/date/src/index.ts"
-      ],
-      "@my-projects-nx/shared/crt/ui/controls/date-range": [
-        "libs/shared/crt/ui/controls/date-range/src/index.ts"
-      ],
-      "@my-projects-nx/shared/crt/ui/controls/form-field": [
-        "libs/shared/crt/ui/controls/form-field/src/index.ts"
-      ],
-      "@my-projects-nx/shared/crt/ui/controls/input": [
-        "libs/shared/crt/ui/controls/input/src/index.ts"
-      ],
-      "@my-projects-nx/shared/crt/ui/controls/password": [
-        "libs/shared/crt/ui/controls/password/src/index.ts"
-      ],
-      "@my-projects-nx/shared/crt/ui/controls/radios": [
-        "libs/shared/crt/ui/controls/radios/src/index.ts"
-      ],
-      "@my-projects-nx/shared/crt/ui/controls/select": [
-        "libs/shared/crt/ui/controls/select/src/index.ts"
-      ],
-      "@my-projects-nx/shared/crt/ui/layout": [
-        "libs/shared/crt/ui/layout/src/index.ts"
-      ],
       "@my-projects-nx/shared/data-access/auth": [
         "libs/shared/data-access/auth/src/index.ts"
+      ],
+      "@my-projects-nx/shared/ui/crt/controls/autocomplete": [
+        "libs/shared/ui/crt/controls/autocomplete/src/index.ts"
+      ],
+      "@my-projects-nx/shared/ui/crt/controls/checkboxes": [
+        "libs/shared/ui/crt/controls/checkboxes/src/index.ts"
+      ],
+      "@my-projects-nx/shared/ui/crt/controls/date": [
+        "libs/shared/ui/crt/controls/date/src/index.ts"
+      ],
+      "@my-projects-nx/shared/ui/crt/controls/date-range": [
+        "libs/shared/ui/crt/controls/date-range/src/index.ts"
+      ],
+      "@my-projects-nx/shared/ui/crt/controls/form-field": [
+        "libs/shared/ui/crt/controls/form-field/src/index.ts"
+      ],
+      "@my-projects-nx/shared/ui/crt/controls/input": [
+        "libs/shared/ui/crt/controls/input/src/index.ts"
+      ],
+      "@my-projects-nx/shared/ui/crt/controls/password": [
+        "libs/shared/ui/crt/controls/password/src/index.ts"
+      ],
+      "@my-projects-nx/shared/ui/crt/controls/radios": [
+        "libs/shared/ui/crt/controls/radios/src/index.ts"
+      ],
+      "@my-projects-nx/shared/ui/crt/controls/select": [
+        "libs/shared/ui/crt/controls/select/src/index.ts"
+      ],
+      "@my-projects-nx/shared/ui/crt/layout": [
+        "libs/shared/ui/crt/layout/src/index.ts"
       ],
       "@my-projects-nx/shared/util/models": [
         "libs/shared/util/models/src/index.ts"

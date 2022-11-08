@@ -8,7 +8,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { QuestionRandomizerShellUiHeaderComponent } from '@my-projects-nx/question-randomizer/shell/ui/header';
 import { QuestionRandomizerShellFeatureComponent } from './question-randomizer-shell-feature.component';
-import { SharedCrtUiLayoutComponent } from '@my-projects-nx/shared/crt/ui/layout';
+import { SharedUiCrtLayoutComponent } from '@my-projects-nx/shared/ui/crt/layout';
 
 @NgModule({
   declarations: [QuestionRandomizerShellFeatureComponent],
@@ -35,7 +35,7 @@ import { SharedCrtUiLayoutComponent } from '@my-projects-nx/shared/crt/ui/layout
     }),
     // EffectsModule.forRoot([CommonEffects, DictionariesEffects, UserEffects]),
     StoreRouterConnectingModule.forRoot(),
-    SharedCrtUiLayoutComponent,
+    SharedUiCrtLayoutComponent,
     QuestionRandomizerShellUiHeaderComponent,
   ],
   exports: [RouterModule],

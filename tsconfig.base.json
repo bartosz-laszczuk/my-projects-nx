@@ -56,6 +56,15 @@
       ],
       "@my-projects-nx/shared/crt/ui/layout": [
         "libs/shared/crt/ui/layout/src/index.ts"
+      ],
+      "@my-projects-nx/shared/data-access/auth": [
+        "libs/shared/data-access/auth/src/index.ts"
+      ],
+      "@my-projects-nx/shared/util/models": [
+        "libs/shared/util/models/src/index.ts"
+      ],
+      "@my-projects-nx/shared/util/utils": [
+        "libs/shared/util/utils/src/index.ts"
       ]
     }
   },

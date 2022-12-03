@@ -13,7 +13,7 @@ import { AbstractControl } from '@angular/forms';
   imports: [CommonModule],
   templateUrl: './shared-crt-ui-controls-form-field.component.html',
   styleUrls: ['./shared-crt-ui-controls-form-field.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SharedUiCrtControlsFormFieldComponent {
   @Input() label: string;

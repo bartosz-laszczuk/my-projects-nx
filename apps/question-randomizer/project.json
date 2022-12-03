@@ -21,7 +21,7 @@
         ],
         "styles": [
           "libs/shared/ui/crt/layout/src/styles/styles.scss",
-          "apps/question-randomizer/src/styles.scss"
+          "apps/question-randomizer/src/styles/styles.scss"
         ],
         "scripts": [],
         "stylePreprocessorOptions": {

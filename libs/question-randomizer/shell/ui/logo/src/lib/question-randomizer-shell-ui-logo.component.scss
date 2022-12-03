@@ -34,13 +34,12 @@
 
 .break {
   width: 100%;
+  overflow: hidden;
+  padding-top: 1rem;
   &__dots {
-    margin-top: 1rem;
-    display: block;
-    overflow: hidden;
     animation: typing 0.8s steps(40, end);
-    @include mixins.respond(tab-port) {
-      margin-top: 0;
-    }
+  }
+  @include mixins.respond(tab-port) {
+    padding-top: 0;
   }
 }

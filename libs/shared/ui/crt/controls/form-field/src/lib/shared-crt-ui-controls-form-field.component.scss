@@ -1,10 +1,9 @@
 @use 'colors';
 
 .form-field {
-  // padding-bottom: 8px;
   &__label {
     display: block;
-    // margin: 0 0 6px 0;
+    min-width: fit-content;
   }
 
   &__control {

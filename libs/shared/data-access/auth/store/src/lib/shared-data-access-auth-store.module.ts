@@ -8,4 +8,4 @@ import { userReducer } from './user/user.reducer';
     // EffectsModule.forFeature([UserEffects]),
   ],
 })
-export class QuestionRandomizerAuthDataAccessStoreModule {}
+export class SharedDataAccessAuthStoreModule {}

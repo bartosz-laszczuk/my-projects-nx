@@ -1,15 +1,15 @@
 {
-  "name": "shared-data-access-auth",
-  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
+  "name": "shared-data-access-auth-api",
   "projectType": "library",
-  "sourceRoot": "libs/shared/data-access/auth/src",
+  "sourceRoot": "libs/shared/data-access/auth/api/src",
   "prefix": "my-projects-nx",
   "targets": {
     "test": {
       "executor": "@nrwl/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "libs/shared/data-access/auth/jest.config.ts",
+        "jestConfig": "libs/shared/data-access/auth/api/jest.config.ts",
         "passWithNoTests": true
       }
     },
@@ -17,8 +17,8 @@
       "executor": "@nrwl/linter:eslint",
       "options": {
         "lintFilePatterns": [
-          "libs/shared/data-access/auth/**/*.ts",
-          "libs/shared/data-access/auth/**/*.html"
+          "libs/shared/data-access/auth/api/**/*.ts",
+          "libs/shared/data-access/auth/api/**/*.html"
         ]
       }
     }

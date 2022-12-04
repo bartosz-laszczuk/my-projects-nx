@@ -3,14 +3,14 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { questionRandomizerAuthFeatureShellRoutes } from './lib.routes';
 import { QuestionRandomizerAuthFeatureShellComponent } from './question-randomizer-auth-feature-shell.component';
-import { QuestionRandomizerAuthDataAccessStoreModule } from '@my-projects-nx/question-randomizer/auth/data-access/store';
+import { SharedDataAccessAuthStoreModule } from '@my-projects-nx/shared/data-access/auth/store';
 
 @NgModule({
   declarations: [QuestionRandomizerAuthFeatureShellComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(questionRandomizerAuthFeatureShellRoutes),
-    QuestionRandomizerAuthDataAccessStoreModule,
+    SharedDataAccessAuthStoreModule,
   ],
 })
 export class QuestionRandomizerAuthFeatureShellModule {}

@@ -9,7 +9,7 @@ import {
 import {
   getIsLoading,
   signInEmail,
-} from '@my-projects-nx/question-randomizer/auth/data-access/store';
+} from '@my-projects-nx/shared/data-access/auth/store';
 import { SharedUiCrtButtonsButtonComponent } from '@my-projects-nx/shared/ui/crt/buttons/button';
 import { SharedUiCrtControlsFormFieldComponent } from '@my-projects-nx/shared/ui/crt/controls/form-field';
 import { SharedUiCrtControlsInputComponent } from '@my-projects-nx/shared/ui/crt/controls/input';

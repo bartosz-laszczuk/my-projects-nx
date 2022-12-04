@@ -1,6 +1,6 @@
 /* eslint-disable */
 export default {
-  displayName: 'question-randomizer-auth-data-access-store',
+  displayName: 'shared-data-access-auth-store',
   preset: '../../../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -10,7 +10,7 @@ export default {
     },
   },
   coverageDirectory:
-    '../../../../../coverage/libs/question-randomizer/auth/data-access/store',
+    '../../../../../coverage/libs/shared/data-access/auth/store',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': 'jest-preset-angular',
   },

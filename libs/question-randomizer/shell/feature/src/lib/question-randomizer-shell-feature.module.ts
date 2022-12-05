@@ -9,6 +9,13 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { QuestionRandomizerShellUiHeaderComponent } from '@my-projects-nx/question-randomizer/shell/ui/header';
 import { QuestionRandomizerShellFeatureComponent } from './question-randomizer-shell-feature.component';
 import { SharedUiCrtLayoutComponent } from '@my-projects-nx/shared/ui/crt/layout';
+import { getAppConfigProvider } from '@my-projects-nx/question-randomizer/app-config';
+import { environment } from '@question-randomizer/environments/environment';
+import { EffectsModule } from '@ngrx/effects';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 
 @NgModule({
   declarations: [QuestionRandomizerShellFeatureComponent],
@@ -33,11 +40,16 @@ import { SharedUiCrtLayoutComponent } from '@my-projects-nx/shared/ui/crt/layout
       maxAge: 25,
       // logOnly: environment.production,
     }),
-    // EffectsModule.forRoot([CommonEffects, DictionariesEffects, UserEffects]),
+    EffectsModule.forRoot(/*[CommonEffects, DictionariesEffects, UserEffects]*/),
     StoreRouterConnectingModule.forRoot(),
     SharedUiCrtLayoutComponent,
     QuestionRandomizerShellUiHeaderComponent,
+    AngularFireModule.initializeApp(environment.firebase.config),
+    AngularFireAuthModule,
+    AngularFireStorageModule,
+    AngularFirestoreModule,
   ],
   exports: [RouterModule],
+  providers: [getAppConfigProvider(environment)],
 })
 export class QuestionRandomizerShellFeatureModule {}

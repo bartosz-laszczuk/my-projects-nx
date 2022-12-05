@@ -1,5 +1,8 @@
 import { Route } from '@angular/router';
-import { AuthGuard, UnauthGuard } from '@my-projects-nx/shared/util/guards';
+import {
+  AuthGuard,
+  UnauthGuard,
+} from '@my-projects-nx/question-randomizer/shared/util/guards';
 import { QuestionRandomizerAuthFeatureShellComponent } from './question-randomizer-auth-feature-shell.component';
 
 export const questionRandomizerAuthFeatureShellRoutes: Route[] = [

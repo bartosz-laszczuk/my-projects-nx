@@ -15,6 +15,15 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@my-projects-nx/question-randomizer/app-config": [
+        "libs/question-randomizer/app-config/src/index.ts"
+      ],
+      "@my-projects-nx/question-randomizer/auth/data-access/api": [
+        "libs/question-randomizer/auth/data-access/api/src/index.ts"
+      ],
+      "@my-projects-nx/question-randomizer/auth/data-access/store": [
+        "libs/question-randomizer/auth/data-access/store/src/index.ts"
+      ],
       "@my-projects-nx/question-randomizer/auth/feature/email-confirm": [
         "libs/question-randomizer/auth/feature/email-confirm/src/index.ts"
       ],
@@ -27,6 +36,12 @@
       "@my-projects-nx/question-randomizer/auth/feature/shell": [
         "libs/question-randomizer/auth/feature/shell/src/index.ts"
       ],
+      "@my-projects-nx/question-randomizer/shared/util/guards": [
+        "libs/question-randomizer/shared/util/guards/src/index.ts"
+      ],
+      "@my-projects-nx/question-randomizer/shared/util/models": [
+        "libs/question-randomizer/shared/util/models/src/index.ts"
+      ],
       "@my-projects-nx/question-randomizer/shell/feature": [
         "libs/question-randomizer/shell/feature/src/index.ts"
       ],
@@ -38,12 +53,6 @@
       ],
       "@my-projects-nx/question-randomizer/shell/util/services": [
         "libs/question-randomizer/shell/util/services/src/index.ts"
-      ],
-      "@my-projects-nx/shared/data-access/auth/api": [
-        "libs/shared/data-access/auth/api/src/index.ts"
-      ],
-      "@my-projects-nx/shared/data-access/auth/store": [
-        "libs/shared/data-access/auth/store/src/index.ts"
       ],
       "@my-projects-nx/shared/ui/crt/buttons/button": [
         "libs/shared/ui/crt/buttons/button/src/index.ts"
@@ -84,15 +93,10 @@
       "@my-projects-nx/shared/ui/crt/layout": [
         "libs/shared/ui/crt/layout/src/index.ts"
       ],
-      "@my-projects-nx/shared/util/guards": [
-        "libs/shared/util/guards/src/index.ts"
-      ],
-      "@my-projects-nx/shared/util/models": [
-        "libs/shared/util/models/src/index.ts"
-      ],
       "@my-projects-nx/shared/util/utils": [
         "libs/shared/util/utils/src/index.ts"
-      ]
+      ],
+      "@question-randomizer/*": ["apps/question-randomizer/src/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]

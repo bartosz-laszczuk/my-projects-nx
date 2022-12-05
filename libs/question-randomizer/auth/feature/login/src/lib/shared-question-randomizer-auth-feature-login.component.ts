@@ -9,13 +9,13 @@ import {
 import {
   getIsLoading,
   signInEmail,
-} from '@my-projects-nx/shared/data-access/auth/store';
+} from '@my-projects-nx/question-randomizer/auth/data-access/store';
 import { SharedUiCrtButtonsButtonComponent } from '@my-projects-nx/shared/ui/crt/buttons/button';
 import { SharedUiCrtControlsFormFieldComponent } from '@my-projects-nx/shared/ui/crt/controls/form-field';
 import { SharedUiCrtControlsInputComponent } from '@my-projects-nx/shared/ui/crt/controls/input';
 import { SharedUiCrtControlsPasswordComponent } from '@my-projects-nx/shared/ui/crt/controls/password';
 import { SharedUiCrtIndicatorsSpinnerComponent } from '@my-projects-nx/shared/ui/crt/indicators/spinner';
-import { EmailPasswordCredentials } from '@my-projects-nx/shared/util/models';
+import { EmailPasswordCredentials } from '@my-projects-nx/question-randomizer/shared/util/models';
 import {
   markFormGroupTouched,
   regex,

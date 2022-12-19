@@ -36,6 +36,15 @@
       "@my-projects-nx/question-randomizer/auth/feature/shell": [
         "libs/question-randomizer/auth/feature/shell/src/index.ts"
       ],
+      "@my-projects-nx/question-randomizer/randomization/feature/shell": [
+        "libs/question-randomizer/randomization/feature/shell/src/index.ts"
+      ],
+      "@my-projects-nx/question-randomizer/randomization/util/enums": [
+        "libs/question-randomizer/randomization/util/enums/src/index.ts"
+      ],
+      "@my-projects-nx/question-randomizer/randomization/util/models": [
+        "libs/question-randomizer/randomization/util/models/src/index.ts"
+      ],
       "@my-projects-nx/question-randomizer/shared/util/guards": [
         "libs/question-randomizer/shared/util/guards/src/index.ts"
       ],

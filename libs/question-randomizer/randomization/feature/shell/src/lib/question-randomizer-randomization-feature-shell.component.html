@@ -1,0 +1,87 @@
+randomization shell template
+<!-- <div class="app-page">
+  <div class="app-page__content">
+    <app-checkboxes
+      class="category-list"
+      [items]="(categoryControlItems$ | async)!"
+      [value]="(selectedCategoryIdListLoaded$ | async)!"
+      (changed)="onCategoryFilterChanged($event)"
+    ></app-checkboxes>
+    <div>
+      <span
+        >..........................................................................................................</span
+      >
+    </div>
+    <app-section *ngIf="progress >= 0" class="progress" [header]="'Progress'">
+      <div class="progress__bar">
+        <ng-container *ngFor="let n of iterableArray; let i = index">
+          <ng-container *ngIf="isBarFilled(i, progress); else notCompletedBar">
+            <span>█</span>
+          </ng-container>
+        </ng-container>
+        <ng-template #notCompletedBar>
+          <span class="progress__bar--not-filled">▄</span>
+        </ng-template>
+      </div>
+    </app-section>
+
+    <ng-container *ngIf="randomization?.currentQuestion">
+      <br />
+      <app-section [header]="'Question'">
+        <span>{{ randomization?.currentQuestion?.question }}</span>
+      </app-section>
+      <br />
+      <ng-container *ngIf="!randomization?.isAnswerHidden">
+        <app-section [height]="'240px'" [header]="'Answer'">
+          <span>{{ randomization?.currentQuestion?.answer }}</span>
+        </app-section>
+      </ng-container>
+    </ng-container>
+    <ng-container *ngIf="randomization?.status === 2">
+      <div
+        style="
+          margin-top: 10rem;
+          margin-left: 26rem;
+          overflow: hidden;
+          animation: typing 0.8s steps(40, end);
+        "
+      >
+        <span
+          style="
+            font-family: 'Lucida Console';
+            line-height: 14px;
+            font-size: 14px;
+            display: inline-block;
+          "
+          >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;▄█▀▀▀█▄█&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;██&nbsp;<br />▄██&nbsp;&nbsp;&nbsp;&nbsp;▀█&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;██&nbsp;<br />▀███▄&nbsp;&nbsp;&nbsp;▀███&nbsp;&nbsp;▀███&nbsp;&nbsp;▄██▀██&nbsp;▄██▀██&nbsp;&nbsp;▄▄█▀██&nbsp;▄██▀███▄██▀████&nbsp;<br />&nbsp;&nbsp;▀█████▄&nbsp;██&nbsp;&nbsp;&nbsp;&nbsp;██&nbsp;██▀&nbsp;&nbsp;████▀&nbsp;&nbsp;██&nbsp;▄█▀&nbsp;&nbsp;&nbsp;████&nbsp;&nbsp;&nbsp;▀▀██&nbsp;&nbsp;&nbsp;▀▀█&nbsp;<br />▄&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▀██&nbsp;██&nbsp;&nbsp;&nbsp;&nbsp;██&nbsp;██&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;██&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;██▀▀▀▀▀▀▀█████▄▀█████▄▀&nbsp;<br />██&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;██&nbsp;██&nbsp;&nbsp;&nbsp;&nbsp;██&nbsp;██▄&nbsp;&nbsp;&nbsp;&nbsp;▄█▄&nbsp;&nbsp;&nbsp;&nbsp;▄██▄&nbsp;&nbsp;&nbsp;&nbsp;▄█▄&nbsp;&nbsp;&nbsp;███▄&nbsp;&nbsp;&nbsp;██▄&nbsp;<br />█▀█████▀&nbsp;&nbsp;▀████▀███▄█████▀&nbsp;█████▀&nbsp;&nbsp;▀█████▀██████▀██████▀█&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br
+        /></span>
+      </div>
+    </ng-container>
+  </div>
+  <div class="app-page__footer">
+    <app-button class="reset" (click)="onReset()">Reset</app-button>
+    <app-button
+      *ngIf="!!randomization?.currentQuestion"
+      (click)="onShowAnswer()"
+    >
+      <ng-container *ngIf="randomization?.isAnswerHidden === true">
+        Show answer
+      </ng-container>
+      <ng-container *ngIf="randomization?.isAnswerHidden === false">
+        Hide answer
+      </ng-container>
+    </app-button>
+    <app-button
+      (click)="onPrevious()"
+      [disabled]="(isPreviousDisabled$ | async)!"
+    >
+      << Previous
+    </app-button>
+    <app-button
+      (click)="onRandomize()"
+      [disabled]="(isRandomizeDisabled$ | async)!"
+    >
+      Randomize >>
+    </app-button>
+  </div>
+</div> -->

@@ -25,14 +25,14 @@ import {
 export interface UserState {
   entity: User | null;
   uid: string | null;
-  isLoading: boolean;
+  isLoading: boolean | null;
   error: string | null;
 }
 
 export const initialState: UserState = {
   entity: null,
   uid: null,
-  isLoading: false,
+  isLoading: null,
   error: null,
 };
 

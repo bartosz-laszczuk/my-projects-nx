@@ -41,7 +41,7 @@ import { Observable } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class QuestionRandomizerAuthFeatureLoginComponent {
-  loading$: Observable<boolean> = this.store.pipe(select(getIsLoading));
+  loading$: Observable<boolean | null> = this.store.pipe(select(getIsLoading));
 
   form: UntypedFormGroup;
   regexErrors = regexErrors;

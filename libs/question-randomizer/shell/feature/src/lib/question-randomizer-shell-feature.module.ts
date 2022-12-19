@@ -16,6 +16,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { NotificationModule } from '@my-projects-nx/question-randomizer/shared/util/notification';
 
 @NgModule({
   declarations: [QuestionRandomizerShellFeatureComponent],
@@ -40,6 +41,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
       maxAge: 25,
       // logOnly: environment.production,
     }),
+    NotificationModule.forRoot(),
     EffectsModule.forRoot(/*[CommonEffects, DictionariesEffects, UserEffects]*/),
     StoreRouterConnectingModule.forRoot(),
     SharedUiCrtLayoutComponent,

@@ -42,6 +42,9 @@
       "@my-projects-nx/question-randomizer/shared/util/models": [
         "libs/question-randomizer/shared/util/models/src/index.ts"
       ],
+      "@my-projects-nx/question-randomizer/shared/util/notification": [
+        "libs/question-randomizer/shared/util/notification/src/index.ts"
+      ],
       "@my-projects-nx/question-randomizer/shell/feature": [
         "libs/question-randomizer/shell/feature/src/index.ts"
       ],

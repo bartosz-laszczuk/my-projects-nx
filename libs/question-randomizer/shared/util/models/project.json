@@ -1,6 +1,6 @@
 {
-  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
   "name": "question-randomizer-shared-util-models",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
   "sourceRoot": "libs/question-randomizer/shared/util/models//src",
   "prefix": "my-projects-nx",

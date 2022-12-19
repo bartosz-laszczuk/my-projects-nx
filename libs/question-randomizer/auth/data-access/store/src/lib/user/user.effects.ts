@@ -7,6 +7,7 @@ import {
   APP_CONFIG,
 } from '@my-projects-nx/question-randomizer/app-config';
 import { User } from '@my-projects-nx/question-randomizer/shared/util/models';
+import { NotificationService } from '@my-projects-nx/question-randomizer/shared/util/notification';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { serverTimestamp } from 'firebase/firestore';
 
@@ -49,7 +50,7 @@ export class UserEffects {
     private afAuth: AngularFireAuth,
     private _db: AngularFirestore,
     private router: Router,
-    // private notification: NotificationService,
+    private notification: NotificationService,
     @Inject(APP_CONFIG) private appConfig: AppConfig
   ) {}
 
@@ -106,7 +107,7 @@ export class UserEffects {
               )
           ),
           catchError((err) => {
-            // this.notification.error(err.message);
+            this.notification.error(err.message);
             return of(signInEmailError(err.message));
           })
         )
@@ -137,7 +138,7 @@ export class UserEffects {
             signUpEmailSuccess({ uid: signUpState.user!.uid })
           ),
           catchError((err) => {
-            // this.notification.error(err.message);
+            this.notification.error(err.message);
             return of(signUpEmailError(err.message));
           })
         )
@@ -153,7 +154,7 @@ export class UserEffects {
           tap(() => this.router.navigate(['/auth/login'])),
           map(() => signOutSuccess()),
           catchError((err) => {
-            // this.notification.error(err.message);
+            this.notification.error(err.message);
             return of(signOutError(err.message));
           })
         )

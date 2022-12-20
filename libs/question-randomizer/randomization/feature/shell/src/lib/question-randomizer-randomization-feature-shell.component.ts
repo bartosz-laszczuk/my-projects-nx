@@ -91,7 +91,6 @@ export class QuestionRandomizerRandomizationFeatureShellComponent {
     return indexPercentage < progressPercentage;
   }
   private initSubscriptions() {
-    debugger;
     this._questionsFacade.questionList$.subscribe((questionList) => {
       if (!questionList) {
         this._questionsFacade.loadQuestionList();

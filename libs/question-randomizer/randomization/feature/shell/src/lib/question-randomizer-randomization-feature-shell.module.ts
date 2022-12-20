@@ -16,10 +16,9 @@ import { QuestionRandomizerQuestionsDataAccessStoreModule } from '@my-projects-n
     SharedUiCrtButtonsButtonComponent,
     SharedUiCrtControlsCheckboxesComponent,
     QuestionRandomizerRandomizationDataAccessStoreModule,
-    // QuestionsStateModule,
+    QuestionRandomizerQuestionsDataAccessStoreModule,
     // ProgressBarModule,
     // SectionModule,
-    QuestionRandomizerQuestionsDataAccessStoreModule,
   ],
 })
 export class QuestionRandomizerRandomizationFeatureShellModule {}

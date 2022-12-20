@@ -1,17 +1,16 @@
-<!-- <div class="app-page">
-  <div class="app-page__content">
-    <my-projects-nx-shared-crt-ui-controls-checkboxes
-      class="category-list"
-      [items]="(categoryControlItems$ | async)!"
-      [value]="(selectedCategoryIdListLoaded$ | async)!"
-      (changed)="onCategoryFilterChanged($event)"
-    ></my-projects-nx-shared-crt-ui-controls-checkboxes>
-    <div>
-      <span
-        >..........................................................................................................</span
-      >
-    </div>
-    <app-section *ngIf="progress >= 0" class="progress" [header]="'Progress'">
+<div class="app-page__content">
+  <my-projects-nx-shared-crt-ui-controls-checkboxes
+    class="category-list"
+    [items]="(categoryControlItems$ | async)!"
+    [value]="(selectedCategoryIdListLoaded$ | async)!"
+    (changed)="onCategoryFilterChanged($event)"
+  ></my-projects-nx-shared-crt-ui-controls-checkboxes>
+  <div>
+    <span
+      >.................................................................................................................</span
+    >
+  </div>
+  <!-- <app-section *ngIf="progress >= 0" class="progress" [header]="'Progress'">
       <div class="progress__bar">
         <ng-container *ngFor="let n of iterableArray; let i = index">
           <ng-container *ngIf="isBarFilled(i, progress); else notCompletedBar">
@@ -35,54 +34,53 @@
           <span>{{ randomization?.currentQuestion?.answer }}</span>
         </app-section>
       </ng-container>
-    </ng-container>
-    <ng-container *ngIf="randomization?.status === 2">
-      <div
+    </ng-container> -->
+  <ng-container *ngIf="randomization?.status === 2">
+    <div
+      style="
+        margin-top: 10rem;
+        margin-left: 26rem;
+        overflow: hidden;
+        animation: typing 0.8s steps(40, end);
+      "
+    >
+      <span
         style="
-          margin-top: 10rem;
-          margin-left: 26rem;
-          overflow: hidden;
-          animation: typing 0.8s steps(40, end);
+          font-family: 'Lucida Console';
+          line-height: 14px;
+          font-size: 14px;
+          display: inline-block;
         "
-      >
-        <span
-          style="
-            font-family: 'Lucida Console';
-            line-height: 14px;
-            font-size: 14px;
-            display: inline-block;
-          "
-          >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;▄█▀▀▀█▄█&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;██&nbsp;<br />▄██&nbsp;&nbsp;&nbsp;&nbsp;▀█&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;██&nbsp;<br />▀███▄&nbsp;&nbsp;&nbsp;▀███&nbsp;&nbsp;▀███&nbsp;&nbsp;▄██▀██&nbsp;▄██▀██&nbsp;&nbsp;▄▄█▀██&nbsp;▄██▀███▄██▀████&nbsp;<br />&nbsp;&nbsp;▀█████▄&nbsp;██&nbsp;&nbsp;&nbsp;&nbsp;██&nbsp;██▀&nbsp;&nbsp;████▀&nbsp;&nbsp;██&nbsp;▄█▀&nbsp;&nbsp;&nbsp;████&nbsp;&nbsp;&nbsp;▀▀██&nbsp;&nbsp;&nbsp;▀▀█&nbsp;<br />▄&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▀██&nbsp;██&nbsp;&nbsp;&nbsp;&nbsp;██&nbsp;██&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;██&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;██▀▀▀▀▀▀▀█████▄▀█████▄▀&nbsp;<br />██&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;██&nbsp;██&nbsp;&nbsp;&nbsp;&nbsp;██&nbsp;██▄&nbsp;&nbsp;&nbsp;&nbsp;▄█▄&nbsp;&nbsp;&nbsp;&nbsp;▄██▄&nbsp;&nbsp;&nbsp;&nbsp;▄█▄&nbsp;&nbsp;&nbsp;███▄&nbsp;&nbsp;&nbsp;██▄&nbsp;<br />█▀█████▀&nbsp;&nbsp;▀████▀███▄█████▀&nbsp;█████▀&nbsp;&nbsp;▀█████▀██████▀██████▀█&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br
-        /></span>
-      </div>
+        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;▄█▀▀▀█▄█&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;██&nbsp;<br />▄██&nbsp;&nbsp;&nbsp;&nbsp;▀█&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;██&nbsp;<br />▀███▄&nbsp;&nbsp;&nbsp;▀███&nbsp;&nbsp;▀███&nbsp;&nbsp;▄██▀██&nbsp;▄██▀██&nbsp;&nbsp;▄▄█▀██&nbsp;▄██▀███▄██▀████&nbsp;<br />&nbsp;&nbsp;▀█████▄&nbsp;██&nbsp;&nbsp;&nbsp;&nbsp;██&nbsp;██▀&nbsp;&nbsp;████▀&nbsp;&nbsp;██&nbsp;▄█▀&nbsp;&nbsp;&nbsp;████&nbsp;&nbsp;&nbsp;▀▀██&nbsp;&nbsp;&nbsp;▀▀█&nbsp;<br />▄&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▀██&nbsp;██&nbsp;&nbsp;&nbsp;&nbsp;██&nbsp;██&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;██&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;██▀▀▀▀▀▀▀█████▄▀█████▄▀&nbsp;<br />██&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;██&nbsp;██&nbsp;&nbsp;&nbsp;&nbsp;██&nbsp;██▄&nbsp;&nbsp;&nbsp;&nbsp;▄█▄&nbsp;&nbsp;&nbsp;&nbsp;▄██▄&nbsp;&nbsp;&nbsp;&nbsp;▄█▄&nbsp;&nbsp;&nbsp;███▄&nbsp;&nbsp;&nbsp;██▄&nbsp;<br />█▀█████▀&nbsp;&nbsp;▀████▀███▄█████▀&nbsp;█████▀&nbsp;&nbsp;▀█████▀██████▀██████▀█&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br
+      /></span>
+    </div>
+  </ng-container>
+</div>
+<div class="app-page__footer">
+  <my-projects-nx-shared-ui-buttons-button class="reset" (click)="onReset()"
+    >Reset</my-projects-nx-shared-ui-buttons-button
+  >
+  <my-projects-nx-shared-ui-buttons-button
+    *ngIf="!!randomization?.currentQuestion"
+    (click)="onShowAnswer()"
+  >
+    <ng-container *ngIf="randomization?.isAnswerHidden === true">
+      Show answer
     </ng-container>
-  </div>
-  <div class="app-page__footer">
-    <my-projects-nx-shared-ui-buttons-button class="reset" (click)="onReset()"
-      >Reset</my-projects-nx-shared-ui-buttons-button
-    >
-    <my-projects-nx-shared-ui-buttons-button
-      *ngIf="!!randomization?.currentQuestion"
-      (click)="onShowAnswer()"
-    >
-      <ng-container *ngIf="randomization?.isAnswerHidden === true">
-        Show answer
-      </ng-container>
-      <ng-container *ngIf="randomization?.isAnswerHidden === false">
-        Hide answer
-      </ng-container>
-    </my-projects-nx-shared-ui-buttons-button>
-    <my-projects-nx-shared-ui-buttons-button
-      (click)="onPrevious()"
-      [disabled]="(isPreviousDisabled$ | async)!"
-    >
-      << Previous
-    </my-projects-nx-shared-ui-buttons-button>
-    <my-projects-nx-shared-ui-buttons-button
-      (click)="onRandomize()"
-      [disabled]="(isRandomizeDisabled$ | async)!"
-    >
-      Randomize >>
-    </my-projects-nx-shared-ui-buttons-button>
-  </div>
-</div> -->
+    <ng-container *ngIf="randomization?.isAnswerHidden === false">
+      Hide answer
+    </ng-container>
+  </my-projects-nx-shared-ui-buttons-button>
+  <my-projects-nx-shared-ui-buttons-button
+    (click)="onPrevious()"
+    [disabled]="(isPreviousDisabled$ | async)!"
+  >
+    << Previous
+  </my-projects-nx-shared-ui-buttons-button>
+  <my-projects-nx-shared-ui-buttons-button
+    (click)="onRandomize()"
+    [disabled]="(isRandomizeDisabled$ | async)!"
+  >
+    Randomize >>
+  </my-projects-nx-shared-ui-buttons-button>
+</div>

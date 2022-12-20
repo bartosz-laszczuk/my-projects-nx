@@ -1,4 +1,4 @@
-import { User } from '@my-projects-nx/question-randomizer/shared/util/models';
+import { User } from '@my-projects-nx/question-randomizer/shared/util/models/backend';
 import { createReducer, on } from '@ngrx/store';
 import {
   createUser,

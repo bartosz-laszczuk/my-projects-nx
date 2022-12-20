@@ -18,6 +18,8 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { NotificationModule } from '@my-projects-nx/question-randomizer/shared/util/notification';
 import { QuestionRandomizerAuthDataAccessStoreModule } from '@my-projects-nx/question-randomizer/auth/data-access/store';
+import { QuestionRandomizerSharedDataAccessStoreDictionariesModule } from '@my-projects-nx/question-randomizer/shared/data-access/store/dictionaries';
+import { QuestionRandomizerSharedDataAccessStoreCommonModule } from '@my-projects-nx/question-randomizer/shared/data-access/store/common';
 
 @NgModule({
   declarations: [QuestionRandomizerShellFeatureComponent],
@@ -26,11 +28,7 @@ import { QuestionRandomizerAuthDataAccessStoreModule } from '@my-projects-nx/que
     BrowserAnimationsModule,
     RouterModule.forRoot(questionRandomizerFeatureShellRoutes),
     StoreModule.forRoot(
-      {
-        // common: commonReducer,
-        // dictionaries: dictionariesReducer,
-        // user: userReducer,
-      },
+      {},
       {
         runtimeChecks: {
           strictStateImmutability: true,
@@ -44,7 +42,7 @@ import { QuestionRandomizerAuthDataAccessStoreModule } from '@my-projects-nx/que
       logOnly: environment.production,
     }),
     NotificationModule.forRoot(),
-    EffectsModule.forRoot(/*[CommonEffects, DictionariesEffects, UserEffects]*/),
+    EffectsModule.forRoot(),
     StoreRouterConnectingModule.forRoot(),
     SharedUiCrtLayoutComponent,
     QuestionRandomizerShellUiHeaderComponent,
@@ -52,6 +50,8 @@ import { QuestionRandomizerAuthDataAccessStoreModule } from '@my-projects-nx/que
     AngularFireAuthModule,
     AngularFireStorageModule,
     AngularFirestoreModule,
+    QuestionRandomizerSharedDataAccessStoreCommonModule,
+    QuestionRandomizerSharedDataAccessStoreDictionariesModule,
   ],
   exports: [RouterModule],
   providers: [getAppConfigProvider(environment)],

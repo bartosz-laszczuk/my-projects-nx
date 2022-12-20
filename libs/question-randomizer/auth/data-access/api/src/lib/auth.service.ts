@@ -5,7 +5,7 @@ import { Observable, throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 
 import { UtilitiesService } from '@my-projects-nx/shared/util/utils';
-import { IUserLogin } from '@my-projects-nx/question-randomizer/shared/util/models';
+import { IUserLogin } from '@my-projects-nx/question-randomizer/shared/util/models/frontend';
 
 @Injectable()
 export class AuthService {

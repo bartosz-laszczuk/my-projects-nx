@@ -6,7 +6,7 @@ import {
 import {
   ControlItem,
   DictionaryItem,
-} from '@my-projects-nx/question-randomizer/shared/util/models';
+} from '@my-projects-nx/question-randomizer/shared/util/models/frontend';
 
 export const markFormGroupTouched = (formGroup: any) => {
   (Object as any).values(formGroup.controls).forEach((control: any) => {

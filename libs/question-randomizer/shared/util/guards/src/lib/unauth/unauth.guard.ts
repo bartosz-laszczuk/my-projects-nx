@@ -35,7 +35,6 @@ export class UnauthGuard implements CanActivate, CanActivateChild, CanLoad {
       filter((state) => state.isLoading === false),
       take(1),
       tap((state) => {
-        console.log(state);
         if (state.uid) {
           this.router.navigate(['/']);
         }

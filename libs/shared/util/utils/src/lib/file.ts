@@ -6,7 +6,7 @@ export const exportToCsv = (
   if (!rows || !rows.length) {
     return;
   }
-  const separator: string = ';';
+  const separator = ';';
 
   const keys: string[] = Object.keys(rows[0]);
 
@@ -26,7 +26,7 @@ export const exportToCsv = (
       .map((row: any) => {
         return keys
           .map((k) => {
-            let cell = row[k] === null || row[k] === undefined ? '' : row[k];
+            const cell = row[k] === null || row[k] === undefined ? '' : row[k];
 
             // cell =
             //   cell instanceof Date

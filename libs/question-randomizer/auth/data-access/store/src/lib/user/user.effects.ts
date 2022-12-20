@@ -6,7 +6,7 @@ import {
   AppConfig,
   APP_CONFIG,
 } from '@my-projects-nx/question-randomizer/app-config';
-import { User } from '@my-projects-nx/question-randomizer/shared/util/models';
+import { User } from '@my-projects-nx/question-randomizer/shared/util/models/backend';
 import { NotificationService } from '@my-projects-nx/question-randomizer/shared/util/notification';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { serverTimestamp } from 'firebase/firestore';

@@ -1,6 +1,6 @@
 {
-  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
   "name": "question-randomizer-randomization-util-enums",
+  "$schema": "../../../../../node_modules/nx/schemas/project-schema.json",
   "projectType": "library",
   "sourceRoot": "libs/question-randomizer/randomization/util/enums/src",
   "prefix": "my-projects-nx",

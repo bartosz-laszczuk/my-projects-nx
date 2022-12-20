@@ -36,20 +36,53 @@
       "@my-projects-nx/question-randomizer/auth/feature/shell": [
         "libs/question-randomizer/auth/feature/shell/src/index.ts"
       ],
+      "@my-projects-nx/question-randomizer/questions/data-access/mappers": [
+        "libs/question-randomizer/questions/data-access/mappers/src/index.ts"
+      ],
+      "@my-projects-nx/question-randomizer/questions/data-access/repositories": [
+        "libs/question-randomizer/questions/data-access/repositories/src/index.ts"
+      ],
+      "@my-projects-nx/question-randomizer/questions/data-access/store": [
+        "libs/question-randomizer/questions/data-access/store/src/index.ts"
+      ],
+      "@my-projects-nx/question-randomizer/randomization/data-access/mappers": [
+        "libs/question-randomizer/randomization/data-access/mappers/src/index.ts"
+      ],
+      "@my-projects-nx/question-randomizer/randomization/data-access/repositories": [
+        "libs/question-randomizer/randomization/data-access/repositories/src/index.ts"
+      ],
+      "@my-projects-nx/question-randomizer/randomization/data-access/store": [
+        "libs/question-randomizer/randomization/data-access/store/src/index.ts"
+      ],
       "@my-projects-nx/question-randomizer/randomization/feature/shell": [
         "libs/question-randomizer/randomization/feature/shell/src/index.ts"
       ],
       "@my-projects-nx/question-randomizer/randomization/util/enums": [
         "libs/question-randomizer/randomization/util/enums/src/index.ts"
       ],
-      "@my-projects-nx/question-randomizer/randomization/util/models": [
-        "libs/question-randomizer/randomization/util/models/src/index.ts"
+      "@my-projects-nx/question-randomizer/randomization/util/models/backend": [
+        "libs/question-randomizer/randomization/util/models/backend/src/index.ts"
+      ],
+      "@my-projects-nx/question-randomizer/randomization/util/models/frontend": [
+        "libs/question-randomizer/randomization/util/models/frontend/src/index.ts"
+      ],
+      "@my-projects-nx/question-randomizer/shared/data-access/repositories": [
+        "libs/question-randomizer/shared/data-access/repositories/src/index.ts"
+      ],
+      "@my-projects-nx/question-randomizer/shared/data-access/store/common": [
+        "libs/question-randomizer/shared/data-access/store/common/src/index.ts"
+      ],
+      "@my-projects-nx/question-randomizer/shared/data-access/store/dictionaries": [
+        "libs/question-randomizer/shared/data-access/store/dictionaries/src/index.ts"
       ],
       "@my-projects-nx/question-randomizer/shared/util/guards": [
         "libs/question-randomizer/shared/util/guards/src/index.ts"
       ],
-      "@my-projects-nx/question-randomizer/shared/util/models": [
-        "libs/question-randomizer/shared/util/models/src/index.ts"
+      "@my-projects-nx/question-randomizer/shared/util/models/backend": [
+        "libs/question-randomizer/shared/util/models/backend/src/index.ts"
+      ],
+      "@my-projects-nx/question-randomizer/shared/util/models/frontend": [
+        "libs/question-randomizer/shared/util/models/frontend/src/index.ts"
       ],
       "@my-projects-nx/question-randomizer/shared/util/notification": [
         "libs/question-randomizer/shared/util/notification/src/index.ts"

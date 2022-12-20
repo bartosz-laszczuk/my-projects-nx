@@ -15,7 +15,7 @@ import { SharedUiCrtControlsFormFieldComponent } from '@my-projects-nx/shared/ui
 import { SharedUiCrtControlsInputComponent } from '@my-projects-nx/shared/ui/crt/controls/input';
 import { SharedUiCrtControlsPasswordComponent } from '@my-projects-nx/shared/ui/crt/controls/password';
 import { SharedUiCrtIndicatorsSpinnerComponent } from '@my-projects-nx/shared/ui/crt/indicators/spinner';
-import { EmailPasswordCredentials } from '@my-projects-nx/question-randomizer/shared/util/models';
+import { EmailPasswordCredentials } from '@my-projects-nx/question-randomizer/shared/util/models/backend';
 import {
   markFormGroupTouched,
   regex,

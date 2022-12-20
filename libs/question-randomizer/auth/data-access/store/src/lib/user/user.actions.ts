@@ -2,7 +2,7 @@ import {
   EmailPasswordCredentials,
   User,
   UserCreateRequest,
-} from '@my-projects-nx/question-randomizer/shared/util/models';
+} from '@my-projects-nx/question-randomizer/shared/util/models/backend';
 import { createAction, props } from '@ngrx/store';
 
 // Init User

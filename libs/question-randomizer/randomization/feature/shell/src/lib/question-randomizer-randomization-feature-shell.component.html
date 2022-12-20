@@ -1,12 +1,11 @@
-randomization shell template
 <!-- <div class="app-page">
   <div class="app-page__content">
-    <app-checkboxes
+    <my-projects-nx-shared-crt-ui-controls-checkboxes
       class="category-list"
       [items]="(categoryControlItems$ | async)!"
       [value]="(selectedCategoryIdListLoaded$ | async)!"
       (changed)="onCategoryFilterChanged($event)"
-    ></app-checkboxes>
+    ></my-projects-nx-shared-crt-ui-controls-checkboxes>
     <div>
       <span
         >..........................................................................................................</span
@@ -59,8 +58,10 @@ randomization shell template
     </ng-container>
   </div>
   <div class="app-page__footer">
-    <app-button class="reset" (click)="onReset()">Reset</app-button>
-    <app-button
+    <my-projects-nx-shared-ui-buttons-button class="reset" (click)="onReset()"
+      >Reset</my-projects-nx-shared-ui-buttons-button
+    >
+    <my-projects-nx-shared-ui-buttons-button
       *ngIf="!!randomization?.currentQuestion"
       (click)="onShowAnswer()"
     >
@@ -70,18 +71,18 @@ randomization shell template
       <ng-container *ngIf="randomization?.isAnswerHidden === false">
         Hide answer
       </ng-container>
-    </app-button>
-    <app-button
+    </my-projects-nx-shared-ui-buttons-button>
+    <my-projects-nx-shared-ui-buttons-button
       (click)="onPrevious()"
       [disabled]="(isPreviousDisabled$ | async)!"
     >
       << Previous
-    </app-button>
-    <app-button
+    </my-projects-nx-shared-ui-buttons-button>
+    <my-projects-nx-shared-ui-buttons-button
       (click)="onRandomize()"
       [disabled]="(isRandomizeDisabled$ | async)!"
     >
       Randomize >>
-    </app-button>
+    </my-projects-nx-shared-ui-buttons-button>
   </div>
 </div> -->

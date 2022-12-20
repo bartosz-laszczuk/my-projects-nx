@@ -3,10 +3,10 @@ import {
   getIsAuthorized,
   getUser,
   getUserState,
-  initUser,
   signOut,
 } from '@my-projects-nx/question-randomizer/auth/data-access/store';
-import { User } from '@my-projects-nx/question-randomizer/shared/util/models';
+import { loadDictionaries } from '@my-projects-nx/question-randomizer/shared/data-access/store/dictionaries';
+import { User } from '@my-projects-nx/question-randomizer/shared/util/models/backend';
 import { LogoBreakpointsService } from '@my-projects-nx/question-randomizer/shell/util/services';
 import { select, Store } from '@ngrx/store';
 import { filter, Observable, take } from 'rxjs';
@@ -39,7 +39,7 @@ export class QuestionRandomizerShellFeatureComponent {
         take(1)
       )
       .subscribe(() => {
-        // this.store.dispatch(loadDictionaries());
+        this.store.dispatch(loadDictionaries());
       });
 
     // this.serviceWorkerConfiguration.init();
@@ -48,7 +48,4 @@ export class QuestionRandomizerShellFeatureComponent {
   onSignOut() {
     this.store.dispatch(signOut());
   }
-}
-function loadDictionaries(): any {
-  throw new Error('Function not implemented.');
 }

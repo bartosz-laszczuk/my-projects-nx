@@ -45,6 +45,12 @@
       "@my-projects-nx/question-randomizer/questions/data-access/store": [
         "libs/question-randomizer/questions/data-access/store/src/index.ts"
       ],
+      "@my-projects-nx/question-randomizer/questions/ui/edit-question": [
+        "libs/question-randomizer/questions/ui/edit-question/src/index.ts"
+      ],
+      "@my-projects-nx/question-randomizer/questions/ui/question-item": [
+        "libs/question-randomizer/questions/ui/question-item/src/index.ts"
+      ],
       "@my-projects-nx/question-randomizer/randomization/data-access/mappers": [
         "libs/question-randomizer/randomization/data-access/mappers/src/index.ts"
       ],

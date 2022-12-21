@@ -17,7 +17,7 @@ import {
   ControlItem,
   Value,
 } from '@my-projects-nx/question-randomizer/shared/util/models/frontend';
-import { map, Observable, take, tap } from 'rxjs';
+import { map, Observable, take } from 'rxjs';
 
 @Component({
   selector: 'my-projects-nx-question-randomizer-randomization-feature-shell',
@@ -33,7 +33,6 @@ export class QuestionRandomizerRandomizationFeatureShellComponent {
   iterableArray = Array(this.numberOfProgressBars);
   randomization: Randomization;
   progress: number;
-  answerHeight: string;
   categoryControlItems$: Observable<ControlItem[]> =
     this._dictionariesFacade.categoryControlItems$;
   selectedCategoryIdListLoaded$: Observable<string[]> =
@@ -42,15 +41,11 @@ export class QuestionRandomizerRandomizationFeatureShellComponent {
     this._randomizationService.randomizationProgress$;
   isPreviousDisabled$: Observable<boolean> =
     this._randomizationService.usedQuestionsWithCategory$.pipe(
-      tap((questions) => console.log('usedQuestionsWithCategory', questions)),
-      map((questions) => questions.length === 0),
-      tap((result) => console.log(result))
+      map((questions) => questions.length === 0)
     );
   isRandomizeDisabled$: Observable<boolean> =
     this._randomizationService.unusedQuestionsWithCategory$.pipe(
-      tap((questions) => console.log('unusedQuestionsWithCategory', questions)),
-      map((questions) => questions.length === 0),
-      tap((result) => console.log(result))
+      map((questions) => questions.length === 0)
     );
   constructor(
     private _randomizationFacade: RandomizationFacade,

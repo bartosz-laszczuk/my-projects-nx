@@ -7,7 +7,6 @@ import {
   map,
   of,
   switchMap,
-  tap,
   withLatestFrom,
 } from 'rxjs';
 import { combineLatestWith, take } from 'rxjs/operators';
@@ -59,7 +58,6 @@ export class RandomizationEffects {
   loadRandomization$ = createEffect(() =>
     this._actions$.pipe(
       ofType(loadRandomization),
-      tap(() => console.log('load randomization action fired!')),
       map((action) => action.uid),
       switchMap((uid) =>
         this._randomizationService.loadRandomization(uid).pipe(
@@ -73,7 +71,6 @@ export class RandomizationEffects {
               );
               return loadRandomizationSuccess({ entity: randomization });
             } else {
-              console.log('No randomization loaded - creating new! ', entity);
               return loadRandomizationNoRandomization({ uid });
             }
           }),
@@ -88,9 +85,6 @@ export class RandomizationEffects {
   loadRandomizationNoRandomization$ = createEffect(() =>
     this._actions$.pipe(
       ofType(loadRandomizationNoRandomization),
-      tap(() =>
-        console.log('load randomization no randomization action fired!')
-      ),
       map((action) => action.uid),
       switchMap((uid) =>
         this._randomizationService
@@ -102,7 +96,6 @@ export class RandomizationEffects {
           } as RandomizationCreateRequest)
           .pipe(
             withLatestFrom(this._dictionariesFacade.categoriesLoaded$),
-            tap(() => console.log('New randomization created!')),
             switchMap(([entity, categories]) =>
               this._selectedCategoryListService
                 .updateSelectedCategories(

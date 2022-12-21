@@ -35,10 +35,10 @@
     <br />
     <ng-container *ngIf="!randomization?.isAnswerHidden">
       <my-projects-nx-shared-ui-crt-indicators-section
-        [height]="answerHeight"
+        class="answer"
         [header]="'Answer'"
       >
-        <span
+        <span class="answer__text"
           >{{ randomization?.currentQuestion?.answer }}Sass (.scss) is a CSS
           preprocessor, a CSS extension that adds more mechanisms and syntax
           capabilities to the core CSS language.Sass (.scss) is a CSS

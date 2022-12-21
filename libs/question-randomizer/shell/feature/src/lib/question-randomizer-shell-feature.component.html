@@ -1,9 +1,9 @@
 <my-projects-nx-shared-crt-ui-layout>
-  <!-- [isAuthorized]="(isAuthorized$ | async)!"
-    [user]="user$ | async"
-    (signOut)="onSignOut()" -->
   <div class="app-page">
     <my-projects-nx-question-randomizer-shell-ui-header
+      [isAuthorized]="(isAuthorized$ | async)!"
+      [user]="user$ | async"
+      (signOut)="onSignOut()"
       class="app-page__header"
       [breakpoint]="breakpoint$ | async"
     ></my-projects-nx-question-randomizer-shell-ui-header>

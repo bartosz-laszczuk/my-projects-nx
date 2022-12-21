@@ -10,31 +10,98 @@
       >.................................................................................................................</span
     >
   </div>
-  <!-- <app-section *ngIf="progress >= 0" class="progress" [header]="'Progress'">
-      <div class="progress__bar">
-        <ng-container *ngFor="let n of iterableArray; let i = index">
-          <ng-container *ngIf="isBarFilled(i, progress); else notCompletedBar">
-            <span>█</span>
-          </ng-container>
+  <my-projects-nx-shared-ui-crt-indicators-section
+    *ngIf="progress >= 0"
+    class="progress"
+    [header]="'Progress'"
+  >
+    <div class="progress__bar">
+      <ng-container *ngFor="let n of iterableArray; let i = index">
+        <ng-container *ngIf="isBarFilled(i, progress); else notCompletedBar">
+          <span>█</span>
         </ng-container>
-        <ng-template #notCompletedBar>
-          <span class="progress__bar--not-filled">▄</span>
-        </ng-template>
-      </div>
-    </app-section>
-
-    <ng-container *ngIf="randomization?.currentQuestion">
-      <br />
-      <app-section [header]="'Question'">
-        <span>{{ randomization?.currentQuestion?.question }}</span>
-      </app-section>
-      <br />
-      <ng-container *ngIf="!randomization?.isAnswerHidden">
-        <app-section [height]="'240px'" [header]="'Answer'">
-          <span>{{ randomization?.currentQuestion?.answer }}</span>
-        </app-section>
       </ng-container>
-    </ng-container> -->
+      <ng-template #notCompletedBar>
+        <span class="progress__bar--not-filled">▄</span>
+      </ng-template>
+    </div>
+  </my-projects-nx-shared-ui-crt-indicators-section>
+
+  <ng-container *ngIf="randomization?.currentQuestion">
+    <br />
+    <my-projects-nx-shared-ui-crt-indicators-section [header]="'Question'">
+      <span>{{ randomization?.currentQuestion?.question }}</span>
+    </my-projects-nx-shared-ui-crt-indicators-section>
+    <br />
+    <ng-container *ngIf="!randomization?.isAnswerHidden">
+      <my-projects-nx-shared-ui-crt-indicators-section
+        [height]="answerHeight"
+        [header]="'Answer'"
+      >
+        <span
+          >{{ randomization?.currentQuestion?.answer }}Sass (.scss) is a CSS
+          preprocessor, a CSS extension that adds more mechanisms and syntax
+          capabilities to the core CSS language.Sass (.scss) is a CSS
+          preprocessor, a CSS extension that adds more mechanisms and syntax
+          capabilities to the core CSS language.Sass (.scss) is a CSS
+          preprocessor, a CSS extension that adds more mechanisms and syntax
+          capabilities to the core CSS language.Sass (.scss) is a CSS
+          preprocessor, a CSS extension that adds more mechanisms and syntax
+          capabilities to the core CSS language.Sass (.scss) is a CSS
+          preprocessor, a CSS extension that adds more mechanisms and syntax
+          capabilities to the core CSS language.Sass (.scss) is a CSS
+          preprocessor, a CSS extension that adds more mechanisms and syntax
+          capabilities to the core CSS language.Sass (.scss) is a CSS
+          preprocessor, a CSS extension that adds more mechanisms and syntax
+          capabilities to the core CSS language.Sass (.scss) is a CSS
+          preprocessor, a CSS extension that adds more mechanisms and syntax
+          capabilities to the core CSS language.Sass (.scss) is a CSS
+          preprocessor, a CSS extension that adds more mechanisms and syntax
+          capabilities to the core CSS language.Sass (.scss) is a CSS
+          preprocessor, a CSS extension that adds more mechanisms and syntax
+          capabilities to the core CSS language.Sass (.scss) is a CSS
+          preprocessor, a CSS extension that adds more mechanisms and syntax
+          capabilities to the core CSS language.Sass (.scss) is a CSS
+          preprocessor, a CSS extension that adds more mechanisms and syntax
+          capabilities to the core CSS language.Sass (.scss) is a CSS
+          preprocessor, a CSS extension that adds more mechanisms and syntax
+          capabilities to the core CSS language.Sass (.scss) is a CSS
+          preprocessor, a CSS extension that adds more mechanisms and syntax
+          capabilities to the core CSS language.Sass (.scss) is a CSS
+          preprocessor, a CSS extension that adds more mechanisms and syntax
+          capabilities to the core CSS language.Sass (.scss) is a CSS
+          preprocessor, a CSS extension that adds more mechanisms and syntax
+          capabilities to the core CSS language.Sass (.scss) is a CSS
+          preprocessor, a CSS extension that adds more mechanisms and syntax
+          capabilities to the core CSS language.Sass (.scss) is a CSS
+          preprocessor, a CSS extension that adds more mechanisms and syntax
+          capabilities to the core CSS language.Sass (.scss) is a CSS
+          preprocessor, a CSS extension that adds more mechanisms and syntax
+          capabilities to the core CSS language.Sass (.scss) is a CSS
+          preprocessor, a CSS extension that adds more mechanisms and syntax
+          capabilities to the core CSS language.Sass (.scss) is a CSS
+          preprocessor, a CSS extension that adds more mechanisms and syntax
+          capabilities to the core CSS language.Sass (.scss) is a CSS
+          preprocessor, a CSS extension that adds more mechanisms and syntax
+          capabilities to the core CSS language.Sass (.scss) is a CSS
+          preprocessor, a CSS extension that adds more mechanisms and syntax
+          capabilities to the core CSS language.Sass (.scss) is a CSS
+          preprocessor, a CSS extension that adds more mechanisms and syntax
+          capabilities to the core CSS language.Sass (.scss) is a CSS
+          preprocessor, a CSS extension that adds more mechanisms and syntax
+          capabilities to the core CSS language.Sass (.scss) is a CSS
+          preprocessor, a CSS extension that adds more mechanisms and syntax
+          capabilities to the core CSS language.Sass (.scss) is a CSS
+          preprocessor, a CSS extension that adds more mechanisms and syntax
+          capabilities to the core CSS language.Sass (.scss) is a CSS
+          preprocessor, a CSS extension that adds more mechanisms and syntax
+          capabilities to the core CSS language.Sass (.scss) is a CSS
+          preprocessor, a CSS extension that adds more mechanisms and syntax
+          capabilities to the core CSS language.</span
+        >
+      </my-projects-nx-shared-ui-crt-indicators-section>
+    </ng-container>
+  </ng-container>
   <ng-container *ngIf="randomization?.status === 2">
     <div
       style="
@@ -57,9 +124,9 @@
   </ng-container>
 </div>
 <div class="app-page__footer">
-  <my-projects-nx-shared-ui-buttons-button class="reset" (click)="onReset()"
-    >Reset</my-projects-nx-shared-ui-buttons-button
-  >
+  <my-projects-nx-shared-ui-buttons-button class="reset" (click)="onReset()">
+    Reset
+  </my-projects-nx-shared-ui-buttons-button>
   <my-projects-nx-shared-ui-buttons-button
     *ngIf="!!randomization?.currentQuestion"
     (click)="onShowAnswer()"

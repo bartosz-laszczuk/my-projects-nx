@@ -1,4 +1,8 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+} from '@angular/core';
 import { QuestionsFacade } from '@my-projects-nx/question-randomizer/questions/data-access/store';
 import { RandomizationService } from '@my-projects-nx/question-randomizer/randomization/data-access/repositories';
 import {
@@ -29,6 +33,7 @@ export class QuestionRandomizerRandomizationFeatureShellComponent {
   iterableArray = Array(this.numberOfProgressBars);
   randomization: Randomization;
   progress: number;
+  answerHeight: string;
   categoryControlItems$: Observable<ControlItem[]> =
     this._dictionariesFacade.categoryControlItems$;
   selectedCategoryIdListLoaded$: Observable<string[]> =
@@ -53,7 +58,8 @@ export class QuestionRandomizerRandomizationFeatureShellComponent {
     private _dictionariesFacade: DictionariesFacade,
     private _selectedCategoryListFacade: SelectedCategoryListFacade,
     private _randomizationService: RandomizationService,
-    private _usedQuestionListFacade: UsedQuestionListFacade
+    private _usedQuestionListFacade: UsedQuestionListFacade,
+    private _cdr: ChangeDetectorRef
   ) {}
   ngOnInit(): void {
     this._randomizationFacade.loadRandomization();
@@ -91,6 +97,8 @@ export class QuestionRandomizerRandomizationFeatureShellComponent {
     return indexPercentage < progressPercentage;
   }
   private initSubscriptions() {
+    // TODO
+    // add takeuntil destroyed everywhere
     this._questionsFacade.questionList$.subscribe((questionList) => {
       if (!questionList) {
         this._questionsFacade.loadQuestionList();

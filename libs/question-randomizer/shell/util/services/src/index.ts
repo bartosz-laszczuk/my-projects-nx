@@ -1,1 +1,4 @@
-export * from './lib/logo-breakpoints.service';
+export {
+  LogoBreakpoint,
+  LogoBreakpointsService,
+} from './lib/logo-breakpoints.service';

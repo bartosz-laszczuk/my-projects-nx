@@ -132,6 +132,9 @@
       "@my-projects-nx/shared/ui/crt/indicators/progress-bar": [
         "libs/shared/ui/crt/indicators/progress-bar/src/index.ts"
       ],
+      "@my-projects-nx/shared/ui/crt/indicators/section": [
+        "libs/shared/ui/crt/indicators/section/src/index.ts"
+      ],
       "@my-projects-nx/shared/ui/crt/indicators/spinner": [
         "libs/shared/ui/crt/indicators/spinner/src/index.ts"
       ],

@@ -7,6 +7,7 @@ import { SharedUiCrtButtonsButtonComponent } from '@my-projects-nx/shared/ui/crt
 import { SharedUiCrtControlsCheckboxesComponent } from '@my-projects-nx/shared/ui/crt/controls/checkboxes';
 import { QuestionRandomizerRandomizationDataAccessStoreModule } from '@my-projects-nx/question-randomizer/randomization/data-access/store';
 import { QuestionRandomizerQuestionsDataAccessStoreModule } from '@my-projects-nx/question-randomizer/questions/data-access/store';
+import { SharedUiCrtIndicatorsSectionComponent } from '@my-projects-nx/shared/ui/crt/indicators/section';
 
 @NgModule({
   declarations: [QuestionRandomizerRandomizationFeatureShellComponent],
@@ -17,8 +18,8 @@ import { QuestionRandomizerQuestionsDataAccessStoreModule } from '@my-projects-n
     SharedUiCrtControlsCheckboxesComponent,
     QuestionRandomizerRandomizationDataAccessStoreModule,
     QuestionRandomizerQuestionsDataAccessStoreModule,
+    SharedUiCrtIndicatorsSectionComponent,
     // ProgressBarModule,
-    // SectionModule,
   ],
 })
 export class QuestionRandomizerRandomizationFeatureShellModule {}

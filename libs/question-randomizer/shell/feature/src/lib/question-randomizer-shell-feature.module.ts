@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { isDevMode, NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { questionRandomizerFeatureShellRoutes } from './lib.routes';
@@ -20,6 +20,7 @@ import { NotificationModule } from '@my-projects-nx/question-randomizer/shared/u
 import { QuestionRandomizerAuthDataAccessStoreModule } from '@my-projects-nx/question-randomizer/auth/data-access/store';
 import { QuestionRandomizerSharedDataAccessStoreDictionariesModule } from '@my-projects-nx/question-randomizer/shared/data-access/store/dictionaries';
 import { QuestionRandomizerSharedDataAccessStoreCommonModule } from '@my-projects-nx/question-randomizer/shared/data-access/store/common';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [QuestionRandomizerShellFeatureComponent],
@@ -52,6 +53,12 @@ import { QuestionRandomizerSharedDataAccessStoreCommonModule } from '@my-project
     AngularFirestoreModule,
     QuestionRandomizerSharedDataAccessStoreCommonModule,
     QuestionRandomizerSharedDataAccessStoreDictionariesModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000',
+    }),
   ],
   exports: [RouterModule],
   providers: [getAppConfigProvider(environment)],

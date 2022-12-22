@@ -1,0 +1,47 @@
+<!-- <my-projects-nx-shared-crt-ui-controls-form-field label="Search">
+  <app-input
+    [(ngModel)]="searchPhrase"
+    (changed)="doSearchWithPhrase.next($event.toString())"
+  ></app-input>
+</my-projects-nx-shared-crt-ui-controls-form-field>
+<my-projects-nx-shared-ui-table-paginator
+  [length]="tableService.tableLength"
+  [pageIndex]="tableService.pageParameters.index"
+  [pageSize]="tableService.pageParameters.size"
+  (page)="onPageChange($event)"
+></my-projects-nx-shared-ui-table-paginator> -->
+<div class="table-wrapper">
+  <table class="app-table">
+    <tr>
+      <th
+        app-generic-table-header
+        *ngFor="let column of tableService.tableColumnSettings$ | async"
+        [column]="column"
+        [sortDefinition]="tableService.sortDefinition"
+        [ngStyle]="{ width: column.width }"
+        (sort)="tableService.sortByColumn(column)"
+      ></th>
+    </tr>
+
+    <tr
+      class="app-table__row"
+      (click)="rowClick.next(data)"
+      *ngFor="let data of displayResults; index as i"
+    >
+      <td
+        class="app-table__cell"
+        *ngFor="let column of tableService.tableColumnSettings$ | async"
+        app-generic-table-cell
+        [rowIndex]="i"
+        [column]="column"
+        [data]="data"
+      ></td>
+    </tr>
+    <tr
+      *ngIf="displayResults && displayResults.length > 0"
+      class="app-table__footer"
+    >
+      <td></td>
+    </tr>
+  </table>
+</div>

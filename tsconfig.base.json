@@ -45,6 +45,9 @@
       "@my-projects-nx/question-randomizer/questions/data-access/store": [
         "libs/question-randomizer/questions/data-access/store/src/index.ts"
       ],
+      "@my-projects-nx/question-randomizer/questions/feature/shell": [
+        "libs/question-randomizer/questions/feature/shell/src/index.ts"
+      ],
       "@my-projects-nx/question-randomizer/questions/ui/edit-question": [
         "libs/question-randomizer/questions/ui/edit-question/src/index.ts"
       ],
@@ -146,6 +149,12 @@
       ],
       "@my-projects-nx/shared/ui/crt/layout": [
         "libs/shared/ui/crt/layout/src/index.ts"
+      ],
+      "@my-projects-nx/shared/ui/table/generic-table": [
+        "libs/shared/ui/table/generic-table/src/index.ts"
+      ],
+      "@my-projects-nx/shared/ui/table/paginator": [
+        "libs/shared/ui/table/paginator/src/index.ts"
       ],
       "@my-projects-nx/shared/util/utils": [
         "libs/shared/util/utils/src/index.ts"

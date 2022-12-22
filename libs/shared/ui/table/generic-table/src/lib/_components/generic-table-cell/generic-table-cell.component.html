@@ -1,0 +1,15 @@
+<span *ngIf="column.cellType === CellType.RowNumber" class="number">{{
+  rowIndex + 1
+}}</span>
+
+<span *ngIf="column.cellType === CellType.Text">{{
+  data[column.dataPropName]
+}}</span>
+
+<span *ngIf="column.cellType === CellType.Number" class="number">{{
+  data[column.dataPropName]
+}}</span>
+
+<span *ngIf="column.cellType === CellType.Enum" class="number">{{
+  data[column.dataPropName] | tableCellEnum: column.displayTexts
+}}</span>

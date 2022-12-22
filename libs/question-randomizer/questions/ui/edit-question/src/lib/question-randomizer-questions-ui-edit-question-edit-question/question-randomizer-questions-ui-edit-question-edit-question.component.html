@@ -8,7 +8,7 @@
     <my-projects-nx-shared-crt-ui-controls-form-field
       label="Question"
       [required]="true"
-      [control]="form.controls.question"
+      [control]="form.controls['question']"
       [patternError]="regexErrors.safe"
     >
       <app-input formControlName="question"></app-input>
@@ -17,7 +17,7 @@
     <my-projects-nx-shared-crt-ui-controls-form-field
       label="Answer"
       [required]="true"
-      [control]="form.controls.answer"
+      [control]="form.controls['answer']"
     >
       <app-input formControlName="answer"></app-input>
     </my-projects-nx-shared-crt-ui-controls-form-field>
@@ -25,7 +25,7 @@
     <my-projects-nx-shared-crt-ui-controls-form-field
       label="AnswerPl"
       [required]="true"
-      [control]="form.controls.answerPl"
+      [control]="form.controls['answerPl']"
     >
       <app-input formControlName="answerPl"></app-input>
     </my-projects-nx-shared-crt-ui-controls-form-field>
@@ -33,7 +33,7 @@
     <my-projects-nx-shared-crt-ui-controls-form-field
       label="Category"
       [required]="true"
-      [control]="form.controls.categoryId"
+      [control]="form.controls['categoryId']"
     >
       <my-projects-nx-shared-crt-ui-controls-select
         formControlName="categoryId"
@@ -43,7 +43,7 @@
 
     <my-projects-nx-shared-crt-ui-controls-form-field
       label="Qualification"
-      [control]="form.controls.qualificationId"
+      [control]="form.controls['qualificationId']"
     >
       <my-projects-nx-shared-crt-ui-controls-select
         formControlName="qualificationId"
@@ -53,7 +53,7 @@
 
     <my-projects-nx-shared-crt-ui-controls-form-field
       label="Is Active"
-      [control]="form.controls.isActive"
+      [control]="form.controls['isActive']"
     >
       <input formControlName="isActive" type="checkbox" />
     </my-projects-nx-shared-crt-ui-controls-form-field>

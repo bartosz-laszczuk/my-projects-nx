@@ -22,13 +22,14 @@ export const questionRandomizerFeatureShellRoutes: Route[] = [
             pathMatch: 'full',
             redirectTo: 'randomization',
           },
-          // {
-          //   path: 'questions',
-          //   loadChildren: () =>
-          //     import('../questions/questions.module').then(
-          //       (m) => m.QuestionsModule
-          //     ),
-          // },
+          {
+            path: 'questions',
+            loadChildren: () =>
+              import(
+                '@my-projects-nx/question-randomizer/questions/feature/shell'
+              ).then((m) => m.QuestionRandomizerQuestionsFeatureShellModule),
+            canActivate: [AuthGuard],
+          },
           // {
           //   path: 'demo',
           //   loadChildren: () =>

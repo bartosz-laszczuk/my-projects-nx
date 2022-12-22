@@ -1,0 +1,22 @@
+<ng-container *ngIf="!column.sortable"> {{ column.title }} </ng-container>
+<ng-container *ngIf="column.sortable">
+  <span class="c-pointer" (click)="sortByColumn(column)">
+    {{ column.title
+    }}<ng-container *ngIf="sortDefinition">
+      <ng-container
+        *ngIf="
+          column.dataPropName === sortDefinition.field &&
+          sortDefinition.direction === 'asc'
+        "
+        >▲</ng-container
+      >
+      <ng-container
+        *ngIf="
+          column.dataPropName === sortDefinition.field &&
+          sortDefinition.direction === 'desc'
+        "
+        >▼</ng-container
+      >
+    </ng-container>
+  </span>
+</ng-container>

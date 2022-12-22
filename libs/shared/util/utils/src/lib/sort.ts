@@ -1,4 +1,4 @@
-import { SortDirection } from '../table/generic-table/_models/sort-direction.model';
+import { SortDirection } from '@my-projects-nx/shared/ui/table/generic-table';
 
 export const sortByString = (
   value1: string,

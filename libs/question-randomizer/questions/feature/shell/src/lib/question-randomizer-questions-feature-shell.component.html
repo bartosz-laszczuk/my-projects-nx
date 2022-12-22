@@ -1,0 +1,29 @@
+<div class="app-page__content">
+  <my-projects-nx-app-generic-table
+    (rowClick)="onRowClick($event)"
+  ></my-projects-nx-app-generic-table>
+</div>
+
+<div class="app-page__footer">
+  <input
+    type="file"
+    #csvReader
+    name="Upload CSV"
+    id="txtFileUpload"
+    (change)="onFileSelected($event)"
+    accept=".csv"
+    hidden
+  />
+  <br />
+  <div class="to-left">
+    <my-projects-nx-shared-ui-buttons-button (click)="onImport()">
+      Import
+    </my-projects-nx-shared-ui-buttons-button>
+    <my-projects-nx-shared-ui-buttons-button (click)="onExport()">
+      Export
+    </my-projects-nx-shared-ui-buttons-button>
+  </div>
+  <my-projects-nx-shared-ui-buttons-button (click)="onAdd()">
+    Add
+  </my-projects-nx-shared-ui-buttons-button>
+</div>

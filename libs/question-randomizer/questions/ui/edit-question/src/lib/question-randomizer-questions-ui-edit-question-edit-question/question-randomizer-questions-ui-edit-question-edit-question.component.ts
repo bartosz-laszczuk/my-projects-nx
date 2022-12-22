@@ -92,9 +92,6 @@ export class QuestionRandomizerQuestionsUiEditQuestionComponent {
     if (this.data.question) {
       this.form.patchValue(this.data.question);
     }
-
-    const q = this.form.controls['question'];
-    console.log(q);
   }
 
   onSubmit(): void {

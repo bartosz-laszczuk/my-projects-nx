@@ -7,7 +7,7 @@ import {
   Output,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NG_VALUE_ACCESSOR } from '@angular/forms';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
   selector: 'my-projects-nx-shared-crt-ui-controls-input',
@@ -24,7 +24,7 @@ import { NG_VALUE_ACCESSOR } from '@angular/forms';
     },
   ],
 })
-export class SharedUiCrtControlsInputComponent {
+export class SharedUiCrtControlsInputComponent implements ControlValueAccessor {
   @Input() placeholder = '';
   @Output() changed = new EventEmitter<string>();
   value = '';

@@ -108,6 +108,7 @@ export class QuestionRandomizerRandomizationFeatureShellComponent {
         ) {
           this._randomizationFacade.randomizeQuestion();
         }
+        this._cdr.markForCheck();
       }
     );
     this.randomizationProgress$.subscribe(

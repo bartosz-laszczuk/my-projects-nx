@@ -52,7 +52,6 @@ export class QuestionRandomizerQuestionsFeatureShellComponent
   }
 
   onRowClick(question: Question): void {
-    console.log(question);
     this._dialog.open(QuestionRandomizerQuestionsUiEditQuestionComponent, {
       width: '650px',
       height: '420px',

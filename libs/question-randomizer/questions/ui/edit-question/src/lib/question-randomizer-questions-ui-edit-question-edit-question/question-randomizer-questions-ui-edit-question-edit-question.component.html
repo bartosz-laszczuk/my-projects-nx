@@ -11,7 +11,9 @@
       [control]="form.controls['question']"
       [patternError]="regexErrors.safe"
     >
-      <app-input formControlName="question"></app-input>
+      <my-projects-nx-shared-crt-ui-controls-input
+        formControlName="question"
+      ></my-projects-nx-shared-crt-ui-controls-input>
     </my-projects-nx-shared-crt-ui-controls-form-field>
 
     <my-projects-nx-shared-crt-ui-controls-form-field
@@ -19,7 +21,9 @@
       [required]="true"
       [control]="form.controls['answer']"
     >
-      <app-input formControlName="answer"></app-input>
+      <my-projects-nx-shared-crt-ui-controls-input
+        formControlName="answer"
+      ></my-projects-nx-shared-crt-ui-controls-input>
     </my-projects-nx-shared-crt-ui-controls-form-field>
 
     <my-projects-nx-shared-crt-ui-controls-form-field
@@ -27,7 +31,9 @@
       [required]="true"
       [control]="form.controls['answerPl']"
     >
-      <app-input formControlName="answerPl"></app-input>
+      <my-projects-nx-shared-crt-ui-controls-input
+        formControlName="answerPl"
+      ></my-projects-nx-shared-crt-ui-controls-input>
     </my-projects-nx-shared-crt-ui-controls-form-field>
 
     <my-projects-nx-shared-crt-ui-controls-form-field

@@ -26,6 +26,7 @@ import { SharedUiCrtControlsFormFieldComponent } from '@my-projects-nx/shared/ui
 import { SharedUiCrtButtonsButtonComponent } from '@my-projects-nx/shared/ui/crt/buttons/button';
 import { SharedUiCrtControlsSelectComponent } from '@my-projects-nx/shared/ui/crt/controls/select';
 import { CommonModule } from '@angular/common';
+import { SharedUiCrtControlsInputComponent } from '@my-projects-nx/shared/ui/crt/controls/input';
 
 @Component({
   selector:
@@ -38,6 +39,7 @@ import { CommonModule } from '@angular/common';
     SharedUiCrtControlsFormFieldComponent,
     SharedUiCrtButtonsButtonComponent,
     SharedUiCrtControlsSelectComponent,
+    SharedUiCrtControlsInputComponent,
   ],
   templateUrl:
     './question-randomizer-questions-ui-edit-question-edit-question.component.html',
@@ -46,9 +48,7 @@ import { CommonModule } from '@angular/common';
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class QuestionRandomizerQuestionsUiEditQuestionComponent
-  implements OnInit
-{
+export class QuestionRandomizerQuestionsUiEditQuestionComponent {
   form: UntypedFormGroup;
   regexErrors = regexErrors;
   categoryControlItems$ = this._dictionariesFacade.categoryControlItems$;
@@ -60,10 +60,8 @@ export class QuestionRandomizerQuestionsUiEditQuestionComponent
     private _questionsFacade: QuestionsFacade,
     private _dictionariesFacade: DictionariesFacade,
     private _dialogRef: MatDialogRef<QuestionRandomizerQuestionsUiEditQuestionComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: { value: Question }
-  ) {}
-
-  ngOnInit(): void {
+    @Inject(MAT_DIALOG_DATA) public data: { question: Question }
+  ) {
     this.form = this._fb.group({
       question: [
         null,
@@ -91,15 +89,18 @@ export class QuestionRandomizerQuestionsUiEditQuestionComponent
       isActive: [null],
     });
 
-    if (this.data.value) {
-      this.form.patchValue(this.data.value);
+    if (this.data.question) {
+      this.form.patchValue(this.data.question);
     }
+
+    const q = this.form.controls['question'];
+    console.log(q);
   }
 
   onSubmit(): void {
     if (this.form.valid) {
-      if (this.data.value) {
-        const updatedQuestion = { ...this.data.value, ...this.form.value };
+      if (this.data.question) {
+        const updatedQuestion = { ...this.data.question, ...this.form.value };
         this._questionsFacade.updateQuestion(updatedQuestion);
       } else {
         this._questionsFacade.createQuestion(this.form.value);

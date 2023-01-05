@@ -1,9 +1,8 @@
-<ng-container>
+<div class="table-wrapper">
   <table
     mat-table
     [dataSource]="dataSource"
     [trackBy]="trackBy"
-    class="full-table"
     [ngClass]="{ 'last-column-txt-left': lastColumnAlignLeft }"
     aria-label="title"
   >
@@ -49,14 +48,16 @@
         >
         </ng-container>
       </td>
+      <td mat-footer-cell *matFooterCellDef></td>
     </ng-container>
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    <tr mat-footer-row *matFooterRowDef="displayedColumns"></tr>
   </table>
-</ng-container>
+</div>
 
 <ng-template #defaultCell let-item="item" let-col="col">
-  {{ item[col] }}
+  <span>{{ item[col] }}</span>
 </ng-template>
 
 <ng-template #defaultFilter> </ng-template>

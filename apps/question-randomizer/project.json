@@ -7,9 +7,7 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/question-randomizer",
         "index": "apps/question-randomizer/src/index.html",
@@ -28,9 +26,7 @@
         ],
         "scripts": [],
         "stylePreprocessorOptions": {
-          "includePaths": [
-            "libs/shared/ui/crt/layout/src/styles/variables"
-          ]
+          "includePaths": ["libs/shared/ui/crt/layout/src/styles/variables"]
         },
         "serviceWorker": true,
         "ngswConfigPath": "apps/question-randomizer/ngsw-config.json"
@@ -97,9 +93,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": [
-        "{workspaceRoot}/coverage/{projectRoot}"
-      ],
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
         "jestConfig": "apps/question-randomizer/jest.config.ts",
         "passWithNoTests": true

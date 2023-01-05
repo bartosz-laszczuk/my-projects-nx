@@ -7,7 +7,8 @@ import {
   QuestionCsvListItem,
 } from '@my-projects-nx/question-randomizer/shared/util/models/frontend';
 import { BaseGenericTableService } from 'libs/shared/ui/table/generic-table/src/lib/_services/base-generic-table-body.service';
-import { delay } from 'rxjs';
+import { delay, map, take } from 'rxjs';
+import { columnDefs } from './table-definitions/columns-definitions';
 import { QuestionsTableSettingsService } from './_services/questions-table-settings.service';
 
 @Component({
@@ -27,6 +28,10 @@ export class QuestionRandomizerQuestionsFeatureShellComponent
   implements OnInit
 {
   unitTestPracticeString: string;
+  columnDefs = columnDefs;
+  questionListLoaded$ = this.questionsFacade.questionListLoaded$.pipe(
+    map((questions) => questions.slice(0, 18))
+  );
   constructor(
     private _dialog: MatDialog,
     public questionsFacade: QuestionsFacade

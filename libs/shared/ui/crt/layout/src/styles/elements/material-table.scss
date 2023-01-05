@@ -1,0 +1,52 @@
+@use '../variables/colors.scss';
+
+.mdc-data-table {
+  &__table {
+    table-layout: fixed !important;
+  }
+
+  &__header-row {
+    height: 2.4rem !important;
+    text-align: left;
+  }
+
+  &__header-cell {
+    border: 0 !important;
+    &:before {
+      content: '┏━';
+      margin-left: -0.5rem;
+    }
+  }
+
+  &__row {
+    height: 2.4rem !important;
+    &:hover:not(.mat-mdc-footer-row),
+    &:focus:not(.mat-mdc-footer-row) {
+      background: colors.$primary !important;
+      color: colors.$primary-dark;
+      cursor: pointer;
+    }
+  }
+
+  &__cell {
+    border: 0 !important;
+    // overflow: hidden;
+    // text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-right: 0.5rem;
+    *:first-child {
+      margin-left: 1rem !important;
+    }
+    &:not(:first-child):not(.mat-mdc-footer-cell)::before {
+      content: ':';
+    }
+  }
+}
+
+.mat-mdc-footer-cell {
+  &:first-of-type:before {
+    content: '┗━';
+    display: block;
+    margin: -0.5rem 0 0 -0.5rem;
+  }
+}

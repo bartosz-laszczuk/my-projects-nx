@@ -1,0 +1,101 @@
+<ng-container>
+  <table
+    mat-table
+    [dataSource]="dataSource"
+    [trackBy]="trackBy"
+    class="full-table"
+    [ngClass]="{ 'last-column-txt-left': lastColumnAlignLeft }"
+    aria-label="title"
+  >
+    <ng-container
+      *ngFor="let col of columns"
+      [matColumnDef]="col.propertyName"
+      [sticky]="col.stickyStart"
+      [stickyEnd]="col.stickyEnd"
+    >
+      <ng-container
+        *ngIf="
+          !(filterTemplates[col.propertyName]?.templateRef || col.sortable)
+        "
+      >
+        <th mat-header-cell *matHeaderCellDef>
+          {{ col.displayName }}
+        </th></ng-container
+      >
+      <ng-container
+        *ngIf="filterTemplates[col.propertyName]?.templateRef || col.sortable"
+      >
+        <th mat-header-cell *matHeaderCellDef>
+          <!-- [matMenuTriggerFor]="tableColumnMenu"
+        [matMenuTriggerData]="{ column: col }" -->
+          {{ col.displayName }}
+          <!-- <ng-container
+            *ngIf="col.sortable"
+            [ngTemplateOutlet]="sortHeader"
+            [ngTemplateOutletContext]="{
+              column: col.sortName,
+              filterActive: getFilterActive(col.propertyName)
+            }"
+          ></ng-container> -->
+        </th>
+      </ng-container>
+
+      <td *matCellDef="let element; let i = index" mat-cell>
+        <ng-container
+          *ngTemplateOutlet="
+            columnTemplates[col.propertyName]?.templateRef || defaultCell;
+            context: { item: element, col: col.propertyName, i: i }
+          "
+        >
+        </ng-container>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</ng-container>
+
+<ng-template #defaultCell let-item="item" let-col="col">
+  {{ item[col] }}
+</ng-template>
+
+<ng-template #defaultFilter> </ng-template>
+
+<!-- <ng-template #sortHeader let-column="column" let-filterActive="filterActive">
+  <app-list-sort
+    [sortColumn]="sortColumn"
+    [column]="column"
+    [sortAscending]="sortAscending"
+    [filterActive]="filterActive"
+  ></app-list-sort>
+</ng-template> -->
+
+<!-- <mat-menu
+  class="table-column-menu"
+  #tableColumnMenu="matMenu"
+  (close)="menuClose()"
+>
+  <ng-template matMenuContent let-column="column">
+    <ng-container
+      *ngTemplateOutlet="
+        filterTemplates[column.propertyName]?.templateRef || defaultFilter;
+        context: { col: column.propertyName }
+      "
+    >
+    </ng-container>
+    <ng-container *ngIf="column.sortable">
+      <button mat-menu-item (click)="sortBy(column.sortName, true)">
+        <mat-icon>{{
+          column.sortName === sortColumn && sortAscending ? 'done' : ''
+        }}</mat-icon>
+        <span>Sortowanie rosnąco</span>
+      </button>
+      <button mat-menu-item (click)="sortBy(column.sortName, false)">
+        <mat-icon>{{
+          column.sortName === sortColumn && !sortAscending ? 'done' : ''
+        }}</mat-icon>
+        <span>Sortowanie malejąco</span>
+      </button>
+    </ng-container>
+  </ng-template>
+</mat-menu> -->

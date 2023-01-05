@@ -153,6 +153,9 @@
       "@my-projects-nx/shared/ui/table/generic-table": [
         "libs/shared/ui/table/generic-table/src/index.ts"
       ],
+      "@my-projects-nx/shared/ui/table/generic-table-backend-operations": [
+        "libs/shared/ui/table/generic-table-backend-operations/src/index.ts"
+      ],
       "@my-projects-nx/shared/ui/table/paginator": [
         "libs/shared/ui/table/paginator/src/index.ts"
       ],

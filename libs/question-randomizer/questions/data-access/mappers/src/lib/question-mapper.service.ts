@@ -28,6 +28,17 @@ export class QuestionMapperService {
     return { ...question, updated: serverTimestamp() } as QuestionBe;
   }
 
+  questionDbQuestionFe(
+    question: QuestionBe,
+    categories: DictionaryItem[]
+  ): QuestionFe {
+    return {
+      ...question,
+      categoryName:
+        categories.find((c) => c.id === question.categoryId)?.name ?? '',
+    };
+  }
+
   questionCsvToQuestionCreateRequest(
     question: QuestionCsvListItem,
     categories: DictionaryItem[],

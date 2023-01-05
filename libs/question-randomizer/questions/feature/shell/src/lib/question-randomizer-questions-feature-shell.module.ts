@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { questionRandomizerQuestionsFeatureShellRoutes } from './lib.routes';
 import { SharedUiTableGenericTableTempModule } from '@my-projects-nx/shared/ui/table/generic-table';
 import { QuestionRandomizerQuestionsDataAccessStoreModule } from '@my-projects-nx/question-randomizer/questions/data-access/store';
+import { SharedUiTableGenericTableBackendOperationsModule } from '@my-projects-nx/shared/ui/table/generic-table-backend-operations';
 
 @NgModule({
   declarations: [QuestionRandomizerQuestionsFeatureShellComponent],
@@ -19,6 +20,7 @@ import { QuestionRandomizerQuestionsDataAccessStoreModule } from '@my-projects-n
     QuestionRandomizerQuestionsUiEditQuestionComponent,
     RouterModule.forChild(questionRandomizerQuestionsFeatureShellRoutes),
     SharedUiTableGenericTableTempModule,
+    SharedUiTableGenericTableBackendOperationsModule,
     // HttpClientModule,
     // QuestionsStateModule,
     // MatDialogModule,

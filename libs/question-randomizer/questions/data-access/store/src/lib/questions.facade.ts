@@ -49,9 +49,7 @@ export class QuestionsFacade {
   }
 
   updateQuestion(entity: Question) {
-    this._store.dispatch(
-      updateQuestion({ entity: this._mapper.questionToDbQuestion(entity) })
-    );
+    this._store.dispatch(updateQuestion({ entity }));
   }
 
   deleteQuestion(id: string) {

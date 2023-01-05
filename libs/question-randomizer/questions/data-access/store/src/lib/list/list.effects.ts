@@ -6,7 +6,10 @@ import {
   Question as QuestionBe,
   QuestionCreateRequest,
 } from '@my-projects-nx/question-randomizer/shared/util/models/backend';
-import { QuestionCsvListItem } from '@my-projects-nx/question-randomizer/shared/util/models/frontend';
+import {
+  Question,
+  QuestionCsvListItem,
+} from '@my-projects-nx/question-randomizer/shared/util/models/frontend';
 import { NotificationService } from '@my-projects-nx/question-randomizer/shared/util/notification';
 import { exportToCsv } from '@my-projects-nx/shared/util/utils';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
@@ -14,6 +17,7 @@ import { serverTimestamp } from 'firebase/firestore';
 import * as moment from 'moment';
 import { catchError, combineLatest, map, of, switchMap, take, tap } from 'rxjs';
 import { QuestionsFacade } from '../questions.facade';
+import { withLatestFrom } from 'rxjs';
 import {
   createQuestion,
   createQuestionError,
@@ -49,9 +53,13 @@ export class ListEffects {
       ofType(loadQuestionList),
       switchMap(() =>
         this.questionListService.loadQuestionList().pipe(
-          map((questionList: QuestionBe[]) =>
-            loadQuestionListSuccess({ entities: questionList })
-          ),
+          withLatestFrom(this.dictionariesFacade.categoriesLoaded$),
+          map(([questionListBe, categories]) => {
+            const questionList = questionListBe.map((questionBe) =>
+              this.mapper.questionDbQuestionFe(questionBe, categories)
+            );
+            return loadQuestionListSuccess({ entities: questionList });
+          }),
           catchError((err) => of(loadQuestionListError({ error: err.message })))
         )
       )
@@ -152,6 +160,10 @@ export class ListEffects {
       switchMap((entity: QuestionCreateRequest) =>
         this.questionListService.createQuestion(entity).pipe(
           switchMap((id) => this.questionListService.loadQuestion(id)),
+          withLatestFrom(this.dictionariesFacade.categoriesLoaded$),
+          map(([questionBe, categories]) =>
+            this.mapper.questionDbQuestionFe(questionBe, categories)
+          ),
           map((question) => createQuestionSuccess({ entity: question })),
           catchError((err) => of(createQuestionError({ error: err.message })))
         )
@@ -163,15 +175,19 @@ export class ListEffects {
     this.actions$.pipe(
       ofType(updateQuestion),
       map((action) => action.entity),
-      map((entity: QuestionBe) => ({
+      map((entity: Question) => ({
         ...entity,
         updated: serverTimestamp(),
       })),
       switchMap((entity) =>
-        this.questionListService.updateQuestion(entity).pipe(
-          map(() => updateQuestionSuccess({ id: entity.id, changes: entity })),
-          catchError((err) => of(updateQuestionError({ error: err.message })))
-        )
+        this.questionListService
+          .updateQuestion(this.mapper.questionToDbQuestion(entity))
+          .pipe(
+            map(() =>
+              updateQuestionSuccess({ id: entity.id, changes: entity })
+            ),
+            catchError((err) => of(updateQuestionError({ error: err.message })))
+          )
       )
     )
   );

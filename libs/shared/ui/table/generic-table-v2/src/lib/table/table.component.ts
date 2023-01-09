@@ -9,34 +9,29 @@ import {
   QueryList,
 } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-import { ColumnDirective } from './models/column.directive';
-import { IColumn } from './models/column.model';
-import { IFilterSelected } from './models/filter-selected.model';
+import { IFilterSelected } from './_models/filter-selected.model';
 import { TableService } from './table.service';
+import { IColumn } from './_models/column.model';
+import { ColumnDirective } from './_models/column.directive';
+import { SortDefinition } from '../_models/sort-definition.model';
 
 @Component({
-  selector: 'my-projects-nx-generic-table-backend-operations',
+  selector: 'my-projects-nx-generic-table',
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.scss'],
 })
 export class TableComponent<T> implements AfterViewInit {
   @Input() set data(value: T[] | MatTableDataSource<T>) {
-    console.log(value);
     this.dataSource = value;
   }
   @Input() columns: IColumn[] = [];
   @Input() title = '';
   @Input() filterSelected: IFilterSelected[] = [];
-  @Input() sortColumn = 'id';
-  @Input() sortAscending = false;
+  @Input() sortDefinition: SortDefinition<T> | null;
   @Input() lastColumnAlignLeft = false;
   @Input() trackBy = (index: number, item: T) => item;
 
-  @Output() sortByEv: EventEmitter<{ column: string; ascending: boolean }> =
-    new EventEmitter<{
-      column: string;
-      ascending: boolean;
-    }>();
+  @Output() sort = new EventEmitter<IColumn>();
   @Output() menuCloseEv: EventEmitter<string> = new EventEmitter<string>();
 
   @ContentChildren(ColumnDirective) columnTemps: QueryList<ColumnDirective> =
@@ -63,23 +58,7 @@ export class TableComponent<T> implements AfterViewInit {
     this.cdr.detectChanges();
   }
 
-  menuClose(): void {
-    this.menuCloseEv.emit();
-  }
-
-  sortBy(column: string, ascending: boolean): void {
-    this.sortColumn = column;
-    this.sortAscending = ascending;
-    this.sortByEv.emit({ column, ascending });
-  }
-
-  getFilterActive(column: string): boolean {
-    const element = this.filterSelected.filter(
-      (item: IFilterSelected) => item.column === column
-    );
-    if (element?.length) {
-      return element[0].filterSelected;
-    }
-    return false;
+  onSort(column: IColumn): void {
+    this.sort.emit(column);
   }
 }

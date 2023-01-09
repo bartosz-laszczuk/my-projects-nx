@@ -1,6 +1,6 @@
 /* eslint-disable */
 export default {
-  displayName: 'shared-ui-table-generic-table-backend-operations',
+  displayName: 'question-randomizer-questions-ui-table',
   preset: '../../../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -10,7 +10,7 @@ export default {
     },
   },
   coverageDirectory:
-    '../../../../../coverage/libs/shared/ui/table/generic-table-backend-operations',
+    '../../../../../coverage/libs/question-randomizer/questions/ui/table',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': 'jest-preset-angular',
   },

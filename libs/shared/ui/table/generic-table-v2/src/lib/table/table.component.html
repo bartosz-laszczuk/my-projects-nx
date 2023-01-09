@@ -17,25 +17,24 @@
           !(filterTemplates[col.propertyName]?.templateRef || col.sortable)
         "
       >
-        <th mat-header-cell *matHeaderCellDef>
+        <th mat-header-cell *matHeaderCellDef [ngStyle]="{ width: col.width }">
           {{ col.displayName }}
         </th></ng-container
       >
       <ng-container
         *ngIf="filterTemplates[col.propertyName]?.templateRef || col.sortable"
       >
-        <th mat-header-cell *matHeaderCellDef>
+        <th mat-header-cell *matHeaderCellDef [ngStyle]="{ width: col.width }">
           <!-- [matMenuTriggerFor]="tableColumnMenu"
         [matMenuTriggerData]="{ column: col }" -->
-          {{ col.displayName }}
-          <!-- <ng-container
+          <!-- {{ col.displayName }} -->
+          <ng-container
             *ngIf="col.sortable"
             [ngTemplateOutlet]="sortHeader"
             [ngTemplateOutletContext]="{
-              column: col.sortName,
-              filterActive: getFilterActive(col.propertyName)
+              column: col
             }"
-          ></ng-container> -->
+          ></ng-container>
         </th>
       </ng-container>
 
@@ -62,14 +61,13 @@
 
 <ng-template #defaultFilter> </ng-template>
 
-<!-- <ng-template #sortHeader let-column="column" let-filterActive="filterActive">
-  <app-list-sort
-    [sortColumn]="sortColumn"
+<ng-template #sortHeader let-column="column">
+  <app-generic-table-sortable-header
+    [sortDefinition]="sortDefinition"
     [column]="column"
-    [sortAscending]="sortAscending"
-    [filterActive]="filterActive"
-  ></app-list-sort>
-</ng-template> -->
+    (sort)="onSort($event)"
+  ></app-generic-table-sortable-header>
+</ng-template>
 
 <!-- <mat-menu
   class="table-column-menu"

@@ -1,4 +1,4 @@
-import { IColumn } from '@my-projects-nx/shared/ui/table/generic-table-backend-operations';
+import { IColumn } from '@my-projects-nx/shared/ui/table/generic-table-v2';
 
 export const columnDefs: IColumn[] = [
   {

@@ -1,0 +1,19 @@
+<my-projects-nx-shared-crt-ui-controls-form-field label="Search">
+  <my-projects-nx-shared-crt-ui-controls-input
+    [(ngModel)]="searchPhrase"
+    (changed)="doSearchWithPhrase.next($event.toString())"
+  ></my-projects-nx-shared-crt-ui-controls-input>
+</my-projects-nx-shared-crt-ui-controls-form-field>
+<my-projects-nx-shared-ui-table-paginator
+  [length]="tableService.tableLength"
+  [pageIndex]="tableService.pageParameters!.index"
+  [pageSize]="tableService.pageParameters!.size"
+  (page)="onPageChange($event)"
+></my-projects-nx-shared-ui-table-paginator>
+<my-projects-nx-generic-table
+  class="questions-table"
+  [data]="(tableService.displayResults$ | async)!"
+  [columns]="tableService.columns"
+  [sortDefinition]="tableService.sortDefinition"
+  (sort)="onSort($event)"
+></my-projects-nx-generic-table>

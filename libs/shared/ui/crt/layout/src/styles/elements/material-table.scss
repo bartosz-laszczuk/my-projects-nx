@@ -12,6 +12,7 @@
 
   &__header-cell {
     border: 0 !important;
+    padding: 0 !important;
     &:before {
       content: '┏━';
       margin-left: -0.5rem;
@@ -30,6 +31,7 @@
 
   &__cell {
     border: 0 !important;
+    padding: 0 0.5rem 0 0 !important;
     // overflow: hidden;
     // text-overflow: ellipsis;
     white-space: nowrap;

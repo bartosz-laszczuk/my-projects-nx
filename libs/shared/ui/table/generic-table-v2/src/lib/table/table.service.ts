@@ -1,6 +1,6 @@
 import { Injectable, QueryList } from '@angular/core';
-import { ColumnDirective } from './models/column.directive';
-import { TypeOfTemplateEnum } from './models/column.model';
+import { ColumnDirective } from './_models/column.directive';
+import { TypeOfTemplateEnum } from './_models/column.model';
 
 @Injectable({
   providedIn: 'root',

@@ -13,6 +13,7 @@
             "style": "camelCase"
           }
         ],
+        "no-non-null-assertion": true,
         "@typescript-eslint/member-ordering": "off",
         "@angular-eslint/component-selector": [
           "error",

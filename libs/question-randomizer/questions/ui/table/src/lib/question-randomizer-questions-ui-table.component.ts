@@ -2,7 +2,9 @@ import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
+  EventEmitter,
   OnInit,
+  Output,
 } from '@angular/core';
 import { debounceTime, map, Subject } from 'rxjs';
 import { PageEvent } from '@my-projects-nx/shared/ui/table/paginator';
@@ -27,6 +29,7 @@ import { QuestionsFrontendOperationsTableService } from './_services/questions-t
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class QuestionRandomizerQuestionsUiTableComponent implements OnInit {
+  @Output() rowClick = new EventEmitter<Question>();
   constructor(
     private cdr: ChangeDetectorRef,
     public tableService: BaseGenericFrontendOperationsTableService<Question>
@@ -47,6 +50,10 @@ export class QuestionRandomizerQuestionsUiTableComponent implements OnInit {
 
   onPageChange(page: PageEvent) {
     this.tableService.pageChange(page);
+  }
+
+  onRowClick(question: Question) {
+    this.rowClick.emit(question);
   }
 
   private initSubscriptions() {

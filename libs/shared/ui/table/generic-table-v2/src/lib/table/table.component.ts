@@ -33,6 +33,7 @@ export class TableComponent<T> implements AfterViewInit {
 
   @Output() sort = new EventEmitter<IColumn>();
   @Output() menuCloseEv: EventEmitter<string> = new EventEmitter<string>();
+  @Output() rowClick = new EventEmitter<T>();
 
   @ContentChildren(ColumnDirective) columnTemps: QueryList<ColumnDirective> =
     new QueryList<ColumnDirective>();
@@ -60,5 +61,9 @@ export class TableComponent<T> implements AfterViewInit {
 
   onSort(column: IColumn): void {
     this.sort.emit(column);
+  }
+
+  onRowClick(row: T) {
+    this.rowClick.emit(row);
   }
 }

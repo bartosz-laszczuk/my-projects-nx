@@ -1,8 +1,10 @@
 @use '../variables/colors.scss';
+@use '../variables/mixins.scss';
 
 .mdc-data-table {
   &__table {
     table-layout: fixed !important;
+    background: inherit !important;
   }
 
   &__header-row {
@@ -11,6 +13,10 @@
   }
 
   &__header-cell {
+    @include mixins.baseFontSettings();
+    color: colors.$primary !important;
+    font-size: inherit !important;
+    font-family: inherit !important;
     border: 0 !important;
     padding: 0 !important;
     &:before {
@@ -19,17 +25,11 @@
     }
   }
 
-  &__row {
-    height: 2.4rem !important;
-    &:hover:not(.mat-mdc-footer-row),
-    &:focus:not(.mat-mdc-footer-row) {
-      background: colors.$primary !important;
-      color: colors.$primary-dark;
-      cursor: pointer;
-    }
-  }
-
   &__cell {
+    font-size: inherit !important;
+    font-family: inherit !important;
+    color: inherit !important;
+    line-height: inherit !important;
     border: 0 !important;
     padding: 0 0.5rem 0 0 !important;
     // overflow: hidden;
@@ -41,6 +41,18 @@
     }
     &:not(:first-child):not(.mat-mdc-footer-cell)::before {
       content: ':';
+    }
+  }
+
+  &__row {
+    @include mixins.baseFontSettings();
+    color: colors.$primary !important;
+    height: 2.4rem !important;
+    &:hover:not(.mat-mdc-footer-row),
+    &:focus:not(.mat-mdc-footer-row) {
+      background: colors.$primary !important;
+      color: colors.$primary-dark !important;
+      cursor: pointer;
     }
   }
 }

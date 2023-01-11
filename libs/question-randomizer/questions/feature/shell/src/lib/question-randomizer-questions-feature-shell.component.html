@@ -6,7 +6,9 @@
     [data]="(questionListLoaded$ | async)!"
     [columns]="columnDefs"
   ></my-projects-nx-generic-table-backend-operations> -->
-  <my-projects-nx-question-randomizer-questions-ui-table></my-projects-nx-question-randomizer-questions-ui-table>
+  <my-projects-nx-question-randomizer-questions-ui-table
+    (rowClick)="onRowClick($event)"
+  ></my-projects-nx-question-randomizer-questions-ui-table>
 </div>
 
 <div class="app-page__footer">

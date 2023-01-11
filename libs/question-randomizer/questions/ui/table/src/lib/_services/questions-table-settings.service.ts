@@ -22,7 +22,7 @@ export class QuestionsFrontendOperationsTableService extends BaseGenericFrontend
 
   protected override get tableParametersInitialValues(): TableParameters<Question> {
     return new TableParameters<Question>({
-      page: { index: 0, size: 18 },
+      page: { index: 0, size: 19 },
       sort: { field: 'question', direction: SortDirection.Asc },
     });
   }

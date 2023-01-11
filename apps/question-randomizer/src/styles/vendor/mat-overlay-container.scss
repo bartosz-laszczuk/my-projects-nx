@@ -1,0 +1,16 @@
+.app-overlay-container {
+  position: absolute;
+  z-index: 1000;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  .cdk-overlay-pane {
+    margin-top: 15rem;
+  }
+}
+
+.app-overlay-container:empty {
+  display: none;
+}

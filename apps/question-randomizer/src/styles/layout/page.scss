@@ -6,7 +6,7 @@
   overflow: hidden;
 
   // background: $background-light;
-  border-radius: 2rem;
+  // border-radius: 2rem;
   padding: 1rem 2rem;
   // background-image: radial-gradient(rgba(0, 150, 0, 0.75), black 120%);
   // box-shadow: 0 0 1px 3px rgba(10, 10, 10, 0.7);
@@ -23,7 +23,7 @@
   }
 
   &__content {
-    height: calc(100% - 20rem);
+    height: calc(100% - 18rem);
     overflow: hidden;
   }
 
@@ -32,10 +32,10 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    margin-top: 32px;
+    // margin-top: 32px;
     display: flex;
     justify-content: flex-end;
-    padding: 0 4rem;
+    padding: 0 2rem;
     .to-left {
       margin-right: auto;
     }

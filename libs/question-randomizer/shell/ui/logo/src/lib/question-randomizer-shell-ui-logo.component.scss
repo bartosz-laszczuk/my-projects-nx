@@ -11,13 +11,10 @@
   overflow: hidden;
   animation: typing 0.8s steps(40, end);
   display: block;
-  margin-bottom: 2rem;
+  margin-bottom: 0;
   cursor: pointer;
   font-family: 'Lucida Console';
   display: inline-block;
-  @include mixins.respond(tab-port) {
-    margin-bottom: 0;
-  }
 
   &--xxlarge,
   &--xlarge,
@@ -35,11 +32,7 @@
 .break {
   width: 100%;
   overflow: hidden;
-  padding-top: 1rem;
   &__dots {
     animation: typing 0.8s steps(40, end);
-  }
-  @include mixins.respond(tab-port) {
-    padding-top: 0;
   }
 }

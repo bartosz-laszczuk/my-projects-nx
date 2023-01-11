@@ -21,6 +21,8 @@ import { QuestionRandomizerAuthDataAccessStoreModule } from '@my-projects-nx/que
 import { QuestionRandomizerSharedDataAccessStoreDictionariesModule } from '@my-projects-nx/question-randomizer/shared/data-access/store/dictionaries';
 import { QuestionRandomizerSharedDataAccessStoreCommonModule } from '@my-projects-nx/question-randomizer/shared/data-access/store/common';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { OverlayContainer } from '@angular/cdk/overlay';
+import { AppOverlayContainer } from './app-overlay-container';
 
 @NgModule({
   declarations: [QuestionRandomizerShellFeatureComponent],
@@ -61,6 +63,9 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     }),
   ],
   exports: [RouterModule],
-  providers: [getAppConfigProvider(environment)],
+  providers: [
+    getAppConfigProvider(environment),
+    { provide: OverlayContainer, useClass: AppOverlayContainer },
+  ],
 })
 export class QuestionRandomizerShellFeatureModule {}

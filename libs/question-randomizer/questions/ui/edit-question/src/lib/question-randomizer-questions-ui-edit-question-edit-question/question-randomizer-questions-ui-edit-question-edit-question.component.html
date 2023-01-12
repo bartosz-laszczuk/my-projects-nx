@@ -1,73 +1,76 @@
-<div class="form">
-  <form
-    [formGroup]="form"
-    novalidate
-    autocomplete="off"
-    (ngSubmit)="onSubmit()"
-  >
-    <my-projects-nx-shared-crt-ui-controls-form-field
-      label="Question"
-      [required]="true"
-      [control]="form.controls['question']"
-      [patternError]="regexErrors.safe"
-    >
-      <my-projects-nx-shared-crt-ui-controls-input
-        formControlName="question"
-      ></my-projects-nx-shared-crt-ui-controls-input>
-    </my-projects-nx-shared-crt-ui-controls-form-field>
-
-    <my-projects-nx-shared-crt-ui-controls-form-field
-      label="Answer"
-      [required]="true"
-      [control]="form.controls['answer']"
-    >
-      <my-projects-nx-shared-crt-ui-controls-input
-        formControlName="answer"
-      ></my-projects-nx-shared-crt-ui-controls-input>
-    </my-projects-nx-shared-crt-ui-controls-form-field>
-
-    <my-projects-nx-shared-crt-ui-controls-form-field
-      label="AnswerPl"
-      [required]="true"
-      [control]="form.controls['answerPl']"
-    >
-      <my-projects-nx-shared-crt-ui-controls-input
-        formControlName="answerPl"
-      ></my-projects-nx-shared-crt-ui-controls-input>
-    </my-projects-nx-shared-crt-ui-controls-form-field>
-
-    <my-projects-nx-shared-crt-ui-controls-form-field
-      label="Category"
-      [required]="true"
-      [control]="form.controls['categoryId']"
-    >
-      <my-projects-nx-shared-crt-ui-controls-select
-        formControlName="categoryId"
-        [items]="(categoryControlItems$ | async)!"
-      ></my-projects-nx-shared-crt-ui-controls-select>
-    </my-projects-nx-shared-crt-ui-controls-form-field>
-
-    <my-projects-nx-shared-crt-ui-controls-form-field
-      label="Qualification"
-      [control]="form.controls['qualificationId']"
-    >
-      <my-projects-nx-shared-crt-ui-controls-select
-        formControlName="qualificationId"
-        [items]="(qualificationControlItems$ | async)!"
-      ></my-projects-nx-shared-crt-ui-controls-select>
-    </my-projects-nx-shared-crt-ui-controls-form-field>
-
-    <my-projects-nx-shared-crt-ui-controls-form-field
-      label="Is Active"
-      [control]="form.controls['isActive']"
-    >
-      <input formControlName="isActive" type="checkbox" />
-    </my-projects-nx-shared-crt-ui-controls-form-field>
-
-    <div class="form__actions">
-      <my-projects-nx-shared-ui-buttons-button type="submit"
-        >Save</my-projects-nx-shared-ui-buttons-button
+<my-projects-nx-question-randomizer-confirm-dialog
+  [confirmText]="'Save'"
+  (confirm)="onSubmit()"
+  (close)="onClose()"
+>
+  <div class="form">
+    <form [formGroup]="form" novalidate autocomplete="off">
+      <!-- (ngSubmit)="onSubmit()" -->
+      <my-projects-nx-shared-crt-ui-controls-form-field
+        label="Question"
+        [required]="true"
+        [control]="form.controls['question']"
+        [patternError]="regexErrors.safe"
       >
-    </div>
-  </form>
-</div>
+        <my-projects-nx-shared-crt-ui-controls-input
+          formControlName="question"
+        ></my-projects-nx-shared-crt-ui-controls-input>
+      </my-projects-nx-shared-crt-ui-controls-form-field>
+
+      <my-projects-nx-shared-crt-ui-controls-form-field
+        label="Answer"
+        [required]="true"
+        [control]="form.controls['answer']"
+      >
+        <my-projects-nx-shared-crt-ui-controls-input
+          formControlName="answer"
+        ></my-projects-nx-shared-crt-ui-controls-input>
+      </my-projects-nx-shared-crt-ui-controls-form-field>
+
+      <my-projects-nx-shared-crt-ui-controls-form-field
+        label="AnswerPl"
+        [required]="true"
+        [control]="form.controls['answerPl']"
+      >
+        <my-projects-nx-shared-crt-ui-controls-input
+          formControlName="answerPl"
+        ></my-projects-nx-shared-crt-ui-controls-input>
+      </my-projects-nx-shared-crt-ui-controls-form-field>
+
+      <my-projects-nx-shared-crt-ui-controls-form-field
+        label="Category"
+        [required]="true"
+        [control]="form.controls['categoryId']"
+      >
+        <my-projects-nx-shared-crt-ui-controls-select
+          formControlName="categoryId"
+          [items]="(categoryControlItems$ | async)!"
+        ></my-projects-nx-shared-crt-ui-controls-select>
+      </my-projects-nx-shared-crt-ui-controls-form-field>
+
+      <my-projects-nx-shared-crt-ui-controls-form-field
+        label="Qualification"
+        [control]="form.controls['qualificationId']"
+      >
+        <my-projects-nx-shared-crt-ui-controls-select
+          formControlName="qualificationId"
+          [items]="(qualificationControlItems$ | async)!"
+        ></my-projects-nx-shared-crt-ui-controls-select>
+      </my-projects-nx-shared-crt-ui-controls-form-field>
+
+      <my-projects-nx-shared-crt-ui-controls-form-field
+        label="Is Active"
+        [control]="form.controls['isActive']"
+        [isValidationHidden]="true"
+      >
+        <input formControlName="isActive" type="checkbox" />
+      </my-projects-nx-shared-crt-ui-controls-form-field>
+
+      <!-- <div class="form__actions">
+        <my-projects-nx-shared-ui-buttons-button type="submit"
+          >Save</my-projects-nx-shared-ui-buttons-button
+        >
+      </div> -->
+    </form>
+  </div>
+</my-projects-nx-question-randomizer-confirm-dialog>

@@ -23,6 +23,11 @@ import { QuestionRandomizerSharedDataAccessStoreCommonModule } from '@my-project
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { AppOverlayContainer } from './app-overlay-container';
+import {
+  DialogModule,
+  DialogService,
+} from '@my-projects-nx/question-randomizer/shared/util/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [QuestionRandomizerShellFeatureComponent],
@@ -61,6 +66,7 @@ import { AppOverlayContainer } from './app-overlay-container';
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000',
     }),
+    DialogModule,
   ],
   exports: [RouterModule],
   providers: [

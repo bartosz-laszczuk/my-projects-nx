@@ -7,6 +7,8 @@
       class="app-page__header"
       [breakpoint]="breakpoint$ | async"
     ></my-projects-nx-question-randomizer-shell-ui-header>
-    <router-outlet></router-outlet>
+    <content [hidden]="isDialogVisible$ | async">
+      <router-outlet></router-outlet>
+    </content>
   </div>
 </my-projects-nx-shared-crt-ui-layout>

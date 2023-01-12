@@ -4,7 +4,6 @@ import {
   EventEmitter,
   forwardRef,
   Input,
-  OnInit,
   Output,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -57,6 +56,16 @@ export class SharedUiCrtControlsSelectComponent
 
   setDisabledState(isDisabled: boolean): void {
     this.isDisabled = isDisabled;
+  }
+
+  onChangedPureHtmlSelect(event: Event) {
+    const value = (event as any)?.target?.value
+      ? (event as any).target.value
+      : null;
+
+    this.value = value;
+    this.propagateChange(value);
+    this.changed.emit(value);
   }
 
   onChanged(event: MatSelectChange): void {

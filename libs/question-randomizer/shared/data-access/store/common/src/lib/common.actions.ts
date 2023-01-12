@@ -1,8 +1,8 @@
 import { createAction, props } from '@ngrx/store';
 
-export const showDialog = createAction(
+export const changeDialogVisibility = createAction(
   '[App] Show Dialog',
-  props<{ showDialog: boolean }>()
+  props<{ isDialogVisible: boolean }>()
 );
 
 export const handleError = createAction(

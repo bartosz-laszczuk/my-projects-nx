@@ -1,13 +1,13 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
 import { QuestionsFacade } from '@my-projects-nx/question-randomizer/questions/data-access/store';
 import { QuestionRandomizerQuestionsUiEditQuestionComponent } from '@my-projects-nx/question-randomizer/questions/ui/edit-question';
+import { DialogService } from '@my-projects-nx/question-randomizer/shared/util/dialog';
 import {
   Question,
   QuestionCsvListItem,
 } from '@my-projects-nx/question-randomizer/shared/util/models/frontend';
 import { BaseGenericTableService } from 'libs/shared/ui/table/generic-table/src/lib/_services/base-generic-table-body.service';
-import { delay, map, take } from 'rxjs';
+import { delay, map } from 'rxjs';
 import { columnDefs } from './table-definitions/columns-definitions';
 import { QuestionsTableSettingsService } from './_services/questions-table-settings.service';
 
@@ -29,11 +29,10 @@ export class QuestionRandomizerQuestionsFeatureShellComponent
 {
   unitTestPracticeString: string;
   columnDefs = columnDefs;
-  questionListLoaded$ = this.questionsFacade.questionListLoaded$.pipe(
-    map((questions) => questions.slice(0, 18))
-  );
+  questionListLoaded$ = this.questionsFacade.questionListLoaded$;
   constructor(
-    private _dialog: MatDialog,
+    // private _dialog: MatDialog,
+    private _dialog: DialogService,
     public questionsFacade: QuestionsFacade
   ) {}
 
@@ -51,7 +50,7 @@ export class QuestionRandomizerQuestionsFeatureShellComponent
   onAdd(): void {
     this._dialog.open(QuestionRandomizerQuestionsUiEditQuestionComponent, {
       width: '650px',
-      height: '420px',
+      // height: '420px',
       data: {},
     });
   }
@@ -59,7 +58,7 @@ export class QuestionRandomizerQuestionsFeatureShellComponent
   onRowClick(question: Question): void {
     this._dialog.open(QuestionRandomizerQuestionsUiEditQuestionComponent, {
       width: '650px',
-      height: '420px',
+      // height: '420px',
       data: { question },
     });
   }

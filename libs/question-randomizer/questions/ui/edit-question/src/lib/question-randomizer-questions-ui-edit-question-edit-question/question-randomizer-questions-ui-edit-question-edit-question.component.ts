@@ -1,9 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  Inject,
-  OnInit,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, Inject } from '@angular/core';
 import {
   ReactiveFormsModule,
   UntypedFormBuilder,
@@ -27,6 +22,7 @@ import { SharedUiCrtButtonsButtonComponent } from '@my-projects-nx/shared/ui/crt
 import { SharedUiCrtControlsSelectComponent } from '@my-projects-nx/shared/ui/crt/controls/select';
 import { CommonModule } from '@angular/common';
 import { SharedUiCrtControlsInputComponent } from '@my-projects-nx/shared/ui/crt/controls/input';
+import { QuestionRandomizerConfirmDialogComponent } from '@my-projects-nx/question-randomizer/shared/util/dialog';
 
 @Component({
   selector:
@@ -40,6 +36,7 @@ import { SharedUiCrtControlsInputComponent } from '@my-projects-nx/shared/ui/crt
     SharedUiCrtButtonsButtonComponent,
     SharedUiCrtControlsSelectComponent,
     SharedUiCrtControlsInputComponent,
+    QuestionRandomizerConfirmDialogComponent,
   ],
   templateUrl:
     './question-randomizer-questions-ui-edit-question-edit-question.component.html',
@@ -102,9 +99,13 @@ export class QuestionRandomizerQuestionsUiEditQuestionComponent {
       } else {
         this._questionsFacade.createQuestion(this.form.value);
       }
-      this._dialogRef.close();
+      this.onClose();
     } else {
       markFormGroupTouched(this.form);
     }
+  }
+
+  onClose() {
+    this._dialogRef.close();
   }
 }

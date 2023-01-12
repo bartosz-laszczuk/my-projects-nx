@@ -17,6 +17,7 @@ export class SharedUiCrtControlsFormFieldComponent {
   @Input() isInline: boolean;
   @Input() control: AbstractControl;
   @Input() patternError: string;
+  @Input() isValidationHidden = false;
 
   constructor() {
     this.isInline = false;

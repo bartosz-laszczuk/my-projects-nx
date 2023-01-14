@@ -5,7 +5,12 @@
     (change)="onChangedPureHtmlSelect($event)"
     (blur)="onBlur()"
   >
-    <option *ngFor="let item of items" [value]="item.value">
+    <option value=""></option>
+    <option
+      *ngFor="let item of items"
+      [value]="item.value"
+      [attr.selected]="item.value === value ? true : null"
+    >
       {{ item.label }}
     </option>
   </select>

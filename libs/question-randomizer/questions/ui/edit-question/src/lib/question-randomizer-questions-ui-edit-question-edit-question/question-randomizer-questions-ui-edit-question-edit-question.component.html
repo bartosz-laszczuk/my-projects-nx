@@ -63,7 +63,10 @@
         [control]="form.controls['isActive']"
         [isValidationHidden]="true"
       >
-        <input formControlName="isActive" type="checkbox" />
+        <label class="container">
+          <input formControlName="isActive" type="checkbox" />
+          <span class="checkmark"></span>
+        </label>
       </my-projects-nx-shared-crt-ui-controls-form-field>
 
       <!-- <div class="form__actions">

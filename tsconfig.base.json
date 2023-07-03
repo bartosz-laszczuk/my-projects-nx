@@ -78,6 +78,9 @@
       "@my-projects-nx/question-randomizer/randomization/util/models/frontend": [
         "libs/question-randomizer/randomization/util/models/frontend/src/index.ts"
       ],
+      "@my-projects-nx/question-randomizer/shared/data-access/api": [
+        "libs/question-randomizer/shared/data-access/api/src/index.ts"
+      ],
       "@my-projects-nx/question-randomizer/shared/data-access/repositories": [
         "libs/question-randomizer/shared/data-access/repositories/src/index.ts"
       ],

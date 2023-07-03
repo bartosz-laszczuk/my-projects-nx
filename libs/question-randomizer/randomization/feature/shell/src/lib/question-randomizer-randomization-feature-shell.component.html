@@ -38,8 +38,10 @@
         class="answer"
         [header]="'Answer'"
       >
-        <span class="answer__text">{{
-          randomization?.currentQuestion?.answer
+        <span class="answer__text" *ngIf="language$ | async as language">{{
+          language === languages.ENGLISH
+            ? randomization?.currentQuestion?.answer
+            : randomization?.currentQuestion?.answerPl
         }}</span>
       </my-projects-nx-shared-ui-crt-indicators-section>
     </ng-container>
@@ -66,9 +68,14 @@
   </ng-container>
 </div>
 <div class="app-page__footer">
-  <my-projects-nx-shared-ui-buttons-button class="reset" (click)="onReset()">
-    Reset
-  </my-projects-nx-shared-ui-buttons-button>
+  <div class="left-side-buttons">
+    <my-projects-nx-shared-ui-buttons-button (click)="onReset()">
+      Reset
+    </my-projects-nx-shared-ui-buttons-button>
+    <my-projects-nx-shared-ui-buttons-button (click)="onChangeLanguage()">
+      Change language
+    </my-projects-nx-shared-ui-buttons-button>
+  </div>
   <my-projects-nx-shared-ui-buttons-button
     *ngIf="!!randomization?.currentQuestion"
     (click)="onShowAnswer()"

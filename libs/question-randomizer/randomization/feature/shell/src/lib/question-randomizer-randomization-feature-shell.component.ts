@@ -12,6 +12,10 @@ import {
 } from '@my-projects-nx/question-randomizer/randomization/data-access/store';
 import { RandomizationStatus } from '@my-projects-nx/question-randomizer/randomization/util/enums';
 import { Randomization } from '@my-projects-nx/question-randomizer/randomization/util/models/frontend';
+import {
+  Language,
+  LanguageService,
+} from '@my-projects-nx/question-randomizer/shared/data-access/api';
 import { DictionariesFacade } from '@my-projects-nx/question-randomizer/shared/data-access/store/dictionaries';
 import {
   ControlItem,
@@ -47,6 +51,8 @@ export class QuestionRandomizerRandomizationFeatureShellComponent {
     this._randomizationService.unusedQuestionsWithCategory$.pipe(
       map((questions) => questions.length === 0)
     );
+  language$: Observable<Language> = this._languageService.language$;
+  languages = Language;
   constructor(
     private _randomizationFacade: RandomizationFacade,
     private _questionsFacade: QuestionsFacade,
@@ -54,6 +60,7 @@ export class QuestionRandomizerRandomizationFeatureShellComponent {
     private _selectedCategoryListFacade: SelectedCategoryListFacade,
     private _randomizationService: RandomizationService,
     private _usedQuestionListFacade: UsedQuestionListFacade,
+    private _languageService: LanguageService,
     private _cdr: ChangeDetectorRef
   ) {}
   ngOnInit(): void {
@@ -85,6 +92,15 @@ export class QuestionRandomizerRandomizationFeatureShellComponent {
   }
   onReset() {
     this._randomizationFacade.reset(this.randomization.id);
+  }
+  onChangeLanguage() {
+    this.language$
+      .pipe(take(1))
+      .subscribe((language) =>
+        this._languageService.setLanguage(
+          language === Language.ENGLISH ? Language.POLISH : Language.ENGLISH
+        )
+      );
   }
   isBarFilled(index: number, progress: number): boolean {
     const progressPercentage = progress / 100;

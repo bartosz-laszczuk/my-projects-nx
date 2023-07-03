@@ -1,5 +1,9 @@
 import { Injectable } from '@angular/core';
 import { QuestionsFacade } from '@my-projects-nx/question-randomizer/questions/data-access/store';
+import {
+  Language,
+  LanguageService,
+} from '@my-projects-nx/question-randomizer/shared/data-access/api';
 import { Question } from '@my-projects-nx/question-randomizer/shared/util/models/frontend';
 import {
   SortDirection,
@@ -13,8 +17,31 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class QuestionsFrontendOperationsTableService extends BaseGenericFrontendOperationsTableService<Question> {
-  constructor(private questionsFacade: QuestionsFacade) {
+  constructor(
+    private questionsFacade: QuestionsFacade,
+    private _languageService: LanguageService
+  ) {
     super();
+    const language = _languageService.language$.value;
+    this.columns = [
+      {
+        displayName: 'Question',
+        propertyName: 'question',
+        sortable: true,
+        width: '40%',
+      },
+      {
+        displayName: 'Answer',
+        propertyName: language === Language.ENGLISH ? 'answer' : 'answerPl',
+        sortable: true,
+        width: '40%',
+      },
+      {
+        displayName: 'Category',
+        propertyName: 'categoryName',
+        width: '20%',
+      },
+    ];
   }
 
   protected override resultsSource$: Observable<Question[]> =
@@ -27,23 +54,24 @@ export class QuestionsFrontendOperationsTableService extends BaseGenericFrontend
     });
   }
 
-  public override columns: IColumn[] = [
-    {
-      displayName: 'Question',
-      propertyName: 'question',
-      sortable: true,
-      width: '40%',
-    },
-    {
-      displayName: 'Answer',
-      propertyName: 'answer',
-      sortable: true,
-      width: '40%',
-    },
-    {
-      displayName: 'Category',
-      propertyName: 'categoryName',
-      width: '20%',
-    },
-  ];
+  public override columns: IColumn[];
+  // public override columns: IColumn[] = [
+  //   {
+  //     displayName: 'Question',
+  //     propertyName: 'question',
+  //     sortable: true,
+  //     width: '40%',
+  //   },
+  //   {
+  //     displayName: 'Answer',
+  //     propertyName: 'answer',
+  //     sortable: true,
+  //     width: '40%',
+  //   },
+  //   {
+  //     displayName: 'Category',
+  //     propertyName: 'categoryName',
+  //     width: '20%',
+  //   },
+  // ];
 }

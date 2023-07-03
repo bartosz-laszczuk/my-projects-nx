@@ -28,6 +28,7 @@ import {
   DialogService,
 } from '@my-projects-nx/question-randomizer/shared/util/dialog';
 import { MatDialogModule } from '@angular/material/dialog';
+import { LanguageService } from '@my-projects-nx/question-randomizer/shared/data-access/api';
 
 @NgModule({
   declarations: [QuestionRandomizerShellFeatureComponent],
@@ -72,6 +73,7 @@ import { MatDialogModule } from '@angular/material/dialog';
   providers: [
     getAppConfigProvider(environment),
     { provide: OverlayContainer, useClass: AppOverlayContainer },
+    LanguageService,
   ],
 })
 export class QuestionRandomizerShellFeatureModule {}
